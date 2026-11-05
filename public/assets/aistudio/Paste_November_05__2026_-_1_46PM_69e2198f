@@ -1,0 +1,1885 @@
+# Master App Design Prompt – PGA TOUR 2K25 Golf Course Designer Studio
+
+
+
+Windows desktop application
+
+AI-assisted design
+
+LiDAR & terrain mapping
+
+
+
+## 1. Project vision
+
+Design and develop a sophisticated Windows desktop application called 2K25 Golf Course Designer Studio.
+
+The application's purpose is to act as an intelligent planning, visualisation and design companion for people creating golf courses using the Course Designer in PGA TOUR 2K25.
+
+It should help users progress from an initial creative idea to a detailed, practical golf course design that can be recreated inside the game.
+
+The application must combine:
+
+- AI-powered golf course concept generation.
+- Environment and landscape visualisation.
+- Real-world golf course research.
+- LiDAR terrain data processing and heightmap preparation.
+- OpenStreetMap integration.
+- Golf hole routing and layout planning.
+- Terrain and elevation analysis.
+- Individual hole design tools.
+- Bunker, green, fairway and hazard planning.
+- Planting and environmental design.
+- Course architecture recommendations.
+- Design execution instructions for PGA TOUR 2K25.
+- Project management and design documentation.
+
+Important design principle: This is not intended to replace the in-game Course Designer. It is an external design studio that helps users plan, prepare, visualise, organise and execute their ideas more efficiently.
+
+The application should support both:
+
+1. Creative course design: Inventing entirely fictional golf courses with unique environments, themes and architectural concepts.
+2. Real-world course recreation: Using geographical information, LiDAR elevation data, mapping information and reference imagery to recreate real golf courses as accurately as possible.
+
+The application should be designed for Windows 10 and Windows 11 desktop computers, with local project storage and an interface optimised for mouse, keyboard and large desktop monitors.
+
+# 2. Main application dashboard
+
+[Software & Apps | Clere Golf](https://images.openai.com/static-rsc-4/S8wFL5I2XCmN2tUPBXzwDbCLPXFfFLkTSZ-qNm1EG3YF8d5CLRMBsqONPfcsdey3bXTbm7pruybvDINNo2HoIUY9GPHXb9DA9SwfF-IUB4kckvODicMo8Rr6jpzg9QkETrSklskW1tFUw0WS_V_S784SzhmSHB90iaB6EFp1iJo?purpose=inline)
+
+[Introducing TGC Designer Tools and Real Course Recreation Lidar Import -  		 		Golf Simulator Forum](https://images.openai.com/static-rsc-4/pOBEm6VoSCd_2PdWTYI02ds3aODEINUv4DRd2xovh3S6JJ1rvFYkYXUY0Ki6qdaeSXljILKU0ff42ydpgY_vFCRO917O3aeq5HJLfuSXBANzllyZ6dZcavM_UVMVKDnqgKZGWLKg1u6lpJp8dW9dexgIZzCuLoOwKj2aA-plvw8?purpose=inline)
+
+[Golf Course Requirements in short](https://images.openai.com/static-rsc-4/P12OfzFZ9of_z3xCIjrRMb-91vPBlHBuR1Qny4s33vvDmyaSq6iyDhMP1dWc4FU1t2L_xjtk9JG0nVnR0XMUm5VR32ay8zHVbpPV2-6Kax2_vqL6M_sgnBdC97Q9iI_Sbc1jwJaNF1xwDgCeyDsWa3xbJqfNYuQknVrHretMcdg?purpose=inline)
+
+14
+
+Create a professional dashboard with a modern golf architecture studio appearance.
+
+The dashboard should provide access to the following main sections:
+
+| Section                   | Purpose                                          |
+| ------------------------- | ------------------------------------------------ |
+| Project Dashboard         | Create, open and manage course projects          |
+| AI Course Concept Studio  | Generate course concepts and environments        |
+| Theme Explorer            | Explore 2K25 environments and visual styles      |
+| Course Architect          | Plan the complete golf course                    |
+| Hole Designer             | Design individual holes                          |
+| LiDAR & Terrain Studio    | Import and process geographical elevation data   |
+| Map & Satellite Studio    | Research real-world locations                    |
+| Terrain Sculpting Planner | Plan elevation changes and landforms             |
+| Feature Designer          | Plan bunkers, greens, hazards and landscaping    |
+| AI Design Assistant       | Get architectural suggestions and feedback       |
+| 2K25 Execution Guide      | Translate plans into in-game actions             |
+| Project Library           | Store images, layouts, maps and design documents |
+| Export Centre             | Export design plans and supported terrain files  |
+
+Include a dashboard showing:
+
+- Recent projects.
+- Active project status.
+- Design completion percentage.
+- Number of holes designed.
+- Terrain preparation status.
+- Outstanding design tasks.
+- Saved concept images.
+- Recent AI-generated recommendations.
+
+# 3. AI Course Concept Studio
+
+Core feature
+
+This is one of the most important areas of the application.
+
+Allow users to describe a golf course they want to create using natural language.
+
+Example:
+
+"Create an 18-hole championship golf course woven through abandoned rice paddies, dense rainforest and ancient stone ruins, with elevated greens, natural streams and dramatic mountain backdrops."
+
+The AI should interpret the description and produce a comprehensive course concept.
+
+## 3.1 Concept generation options
+
+Allow users to specify:
+
+Course characteristics
+
+- Course name.
+- Course location (real or fictional).
+- Number of holes: 9, 18 or custom.
+- Course style.
+- Intended difficulty.
+- Championship or recreational.
+- Target course length.
+- Par configuration.
+- Overall architectural character.
+
+Environment characteristics
+
+- Climate.
+- Geographic setting.
+- Vegetation density.
+- Landscape type.
+- Elevation characteristics.
+- Water features.
+- Rock formations.
+- Surrounding scenery.
+- Seasonal appearance.
+- Atmospheric conditions.
+
+Architectural characteristics
+
+- Traditional parkland.
+- Links.
+- Heathland.
+- Desert.
+- Mountain.
+- Coastal.
+- Woodland.
+- Tropical.
+- Modern championship.
+- Fantasy golf.
+- Historic golf architecture.
+
+## 3.2 AI-generated concept outputs
+
+For each concept, generate:
+
+1. Aerial environmental concept image.
+2. Ground-level landscape reference images.
+3. Suggested golf course theme.
+4. Suggested backdrop.
+5. Suggested vegetation settings.
+6. Terrain characteristics.
+7. Suggested hole routing.
+8. Suggested architectural style.
+9. Suggested bunkering style.
+10. Recommended water and natural hazards.
+
+Allow multiple alternative concepts to be generated from the same description.
+
+Users should be able to save, compare, revise and regenerate individual concepts.
+
+## 3.3 Environment image generation
+
+Include a dedicated AI image generation workspace.
+
+[The Els Club Teluk Datai, Langkawi - Book Golf Holidays, Flights & Breaks](https://images.openai.com/static-rsc-4/gY2DaOtVdHHUY7xV1ROEGyMXDkM3DrONyHgIY-EnKBNTqi-2T8UecjWOU259yBkOQ9ZNGOs4nroPAA01rgCAe5HIXchv-9m7jcvG6n9U7KclTbcCdU2q_VXNhzBrgJ8R-vwVydXEoGr5o6fkxilasAwuPvFFNX2TR6LxZguYww4?purpose=inline)
+
+[Sand Hollow — PJKoenig Golf Photography](https://images.openai.com/static-rsc-4/hmp-O1PIFjd0XPY-X4bao4oRgC0LjuF3ZWbiNV_tJcgn0O9iTOkV4SHTKCN3f-orsLsrCApXYc3VnuVsplcfYyn5kSnx7s41vqw-Hd5ghQRDFMcYyA-YOVaYuFi4Yalpbb2qjGOVvB8lJAT18sPGk2LzZtKY_YSXC53AI_EGGdc?purpose=inline)
+
+[The 36 Greatest Holes in Golf](https://images.openai.com/static-rsc-4/rDqjxxU-Vz3u7olZdwI6OacIzU4iMjf9opFhzBcraTf1LBSWunqA55HcC38tqY9DW9PB1xWfBFq5CcWSZWUtqZ88G3heKQ78lXkeJXC29blDj30VUuQbmvHCDHjrmq1GKyo6YtCROoOtJr_e21_hoTfhBmMeO0o2Bz66bLWVgrQ?purpose=inline)
+
+[Mountain Masterpiece: Fairmont Chateau Whistler Golf Club](https://images.openai.com/static-rsc-4/mAnSAk1Xgz23pYDkUVJ8DxrsdLsKsh7LKbHhFI-bXJGbELeuxOnDYZivtKZ08DG0-qrHijMRx1fYYreKZXyuZmebeSfcoHcX-azYPdes-GhV_j1E7zsh2U2YLmdL9nY1IvVBJgk4YwWvpgTt4Ob-dt50-qvA2SwYDoFhHRKdQqM?purpose=inline)
+
+[The Lost Nine - PARennial Golf | PARennial Golf](https://images.openai.com/static-rsc-4/8GEpqkG0VKUAA4_oQ5S5Jk1B_Mr3jritKNHC2AGSOJNmg-LSGDp6U7FG6jZUByA6FuzJ1XU0MvLeDaXkX77t6acFPlSdYHbb-dr2H5gvj4covlW62vHWk1w3No-D9dNEAviPCx-VtIkg_zszUfw09nCIhkREX6OP9Y2jIV-9A44?purpose=inline)
+
+[Cascata Golf Club – golf ve stylu Las Vegas | Exclusive Tours](https://images.openai.com/static-rsc-4/t9oC3BCsA5m7QyUH2ywasj_T8uJpdtZWNnWtmEzYxkKXyFmlhDf4qgBIkY5B0KB9_eHCWv-LDQmp0rB2tFvLAR4htQwdFA2fOrQYo88LqHW4URUloZdxq6SoqMLAdFgAMJxOvoJ6bwYkGEfwssVyRrX4m6h7EuNd4mKiWAXCZ3g?purpose=inline)
+
+[Golf at The Machrie, Isle of Islay  | Activities | Caledonian MacBrayne](https://images.openai.com/static-rsc-4/p7Z93W7doLIZJ79boj3gjUF1-2pqss0AYE4PjPWY7_ta3kiXeBcSCDaE0qchRYOXAnEJwRLYdSbpxun9VKIy8To_xvgCyK4cWfU1JOOFsRoM6rYxQc7IflQIwD8HENIzXDmMsaMwCy6uV-bdN2E7yUnDQYZNVAm4yWplwgJgfU0?purpose=inline)
+
+[British Columbia Ski Resort for Skiing, Golf & Biking | Sun Peaks](https://images.openai.com/static-rsc-4/IUZhdunPDGIijQwoJMIvIMd4KF9H1d-dCkZp6zek6JH5DsFFKlTxBkE6e0WVjtHCRth-F1Do6sxT_BmHUsUjx5Mj0oEuIKbi4p5E3kTKO16Tt4uKOVkZulo4rN1RALz2_GkcF5QKd66KXWlb_PxyA5nxHEfK4frLDdepe8iqsLE?purpose=inline)
+
+[Forest City Golf Resort Johor - Classic Course](https://images.openai.com/static-rsc-4/SW6uQnqzcw68fvylRbE2MZraSSXzR2X3Gtyixlvv1mAnUdjKbgSDpvd7XvP-atXDR0FMEY7Tddkno-Yub4aKcC7jYdGE16Judl21ZWc8coSMPKHBqdUvM0-GipuqRxEtCl3Doo-8uRu8UlrYRXyoT7NKwFuCL7PsU2ike-z3qDI?purpose=inline)
+
+[The Course : Paradise Canyon Golf Resort](https://images.openai.com/static-rsc-4/ZgACmPuoYNw3o6j2krJezfoBJL4-xd1l6EB_abYvnQX6F_MyFYaT9N6bF-PLg4hJORWh3KmQRd3Dy5GApEqQhKehxY7urxKPRMlP8mBRTJRIhFnMEeZgJpeJDmIPDu8zk6w1wd8gSlCzJtEnWj4jJh8jqMW27a43mDJ7xrWcUwM?purpose=inline)
+
+[Broadway Malyan | Tanjung Aru Development](https://images.openai.com/static-rsc-4/MtBPc5zNuAfQ4kH8SNVoURSTr45m5LxM-Kh9u11HnjA96kwjp1lH5DJlxOEqhb4RFexy0iXw06wCudhMd3G7wdh0yrPJzUwA6M_kvUrGJqi3F84xvGFhxMl0o1B2DFue0mSopgIoI-tXRO7Yg997STmkFrwyVheSea2gh0LvwCs?purpose=inline)
+
+[Win the Ultimate Taste of Tasmania              – LARK Distillery](https://images.openai.com/static-rsc-4/XofMqXJOCODcH9ZfQaFOuTDrSYZhytISP66QWNMK1rnjLCQc-v8uI3BhXTnpe2FmI19JZKYKFXQawCYeuSjQGbkznZ2Ip6A3t7Z0wDfqAWpBopr4OPE-1Cl9wOUUJbWxwSrJMLGxUxmY6xjFYtA10CAziZeZH0Ug9n3MNh5REnQ?purpose=inline)
+
+Provide different image-generation perspectives:
+
+- Full course aerial view.
+- Individual hole aerial view.
+- Tee-to-green perspective.
+- Elevated clubhouse perspective.
+- Ground-level fairway view.
+- Green complex close-up.
+- Bunker detail.
+- Natural landscape detail.
+- Panoramic environmental backdrop.
+
+Include an image reference library where users can save generated images and associate them with particular holes or course features.
+
+Important: Generated imagery must be treated as visual inspiration, not as a directly importable 2K25 course or terrain file.
+
+# 4. PGA TOUR 2K25 Theme Explorer
+
+The application must understand the visual environment options available within the actual PGA TOUR 2K25 Course Designer.
+
+Include a theme selection and comparison workspace.
+
+[PGA TOUR 2K25 Features | Majors - MyPLAYER - Seasons - MP](https://images.openai.com/static-rsc-4/WzlKBYzVUHbQ9QFvep3gZX-rlxxM7-XSD0h0Xa_XtGRzK6Rv6yE0LTQ12uLK7VoYF0iidzCHhE_x9QMlWoF5YWXNZm3esPckPpfUuRmpIUxRnKtujv1lg43Yc2PCBdBSyQ7fIoR1X0cWUwKkTRFb3IBD-ET-hw4pZlRCzVEh08Q?purpose=inline)
+
+[PGA Tour 2K25: We were among the first to play it - what we really think | indy100](https://images.openai.com/static-rsc-4/_PEKhNmwEsqvwMqJdO0YlaS80BYo0ruBb5_8wpd2dh65VoSK2dOhmLCRqykeHu7omE45-Ui9UJYbD9zD4mrZ2QxZ8kfpZK46bk2fru4X07iczsqdVUDk1aJzlZF_bV27_NjTkD5rvaSv-3FPkRtwKXSYcXi_bkMxS8Vh1Ya5eSA?purpose=inline)
+
+[PGA Tour 2K25 review: Above par | Shacknews](https://images.openai.com/static-rsc-4/BgHH2tJqVnDo4RYq0UVWVp90a5bLMd79SOKUu7fv-rWy5VOjQOtF1E9yxsnYHZd1GSwtSowDOC8hurkr2x4EthvMwKL_wXyRv8qEpBfRmYMx0ic3NVJAkjZvJQ3GuX0_pq2-rrwvrmL6IAaUwerFGUYs0iMxASz444S_eR-lHf8?purpose=inline)
+
+[Crazycanuck1985 🇨🇦 (@Crazycanuck1985) on X](https://images.openai.com/static-rsc-4/IHX5bLd2zQxuiTGDSKZl0qyigCgJd6jjzyJt4anNkegI7VMlFglLoY7zN6TGoWGt76-JwHjrvCsd07NCQs3pJnW1ws20-sEHcr34REE8yNMtq6DjSLx6S3RUu1IP1H5n3wCS2Ehrwlwszn7SFNYOWsrzvtF0opF6Is9VIzofAB0?purpose=inline)
+
+[#PGATOUR2K25 (@PGATOUR2K) on X](https://images.openai.com/static-rsc-4/6RCEfsHaIYpmlOWZLMtdcDPo8qeNYDHTV5DxGrqznRVQWATr4OdVxIoVuCDXvj1wd5GDhLcZUmfnD9rVdKKeFu3XaSpQ18EQayOCRiv25C_Yfhx2BAZmtO3Gfa7gzYcXClApCdqRJjleqN3JYjPjE089rEBORECKsszVcPxSdQU?purpose=inline)
+
+[Tiger Woods issues comment after major PGA Tour 2K25 video game announcement](https://images.openai.com/static-rsc-4/6sNs46Y1-YKgeklqY8qMqyF3kXNmQpcPGvWZ3mtzZ5A2qXwxnwckuYyw_lRMWbQYNbJKcmVVRusKCD_2iw5ENlBzUcnQCfeZemaXvI6yut5AxzeA0ToDew0yAzX-jIZp5Rh4iDbJeRcfzFQLei9bJA7LvFxnMxgXyUZxE8gCc7c?purpose=inline)
+
+[arcticfury (@arcticfury1) on X](https://images.openai.com/static-rsc-4/BaUJyTUgIt78A9BrJh6EoWMYARnLCDZIhk0LMJz1PZ-h0yMNlxubMaeTr9agxRnHQPT5QZv8GUicjqo4TbGFP2f-DDk6xcjEUcj5q5ZwvywsEK2Uh1bH2iqV962K7PXPXTc21nrmsLwbryw0BhlAWjfFDImWBQJUOShoGeLDI4Y?purpose=inline)
+
+[10 Best PGA 2K25 Courses, Ranked - Operation Sports](https://images.openai.com/static-rsc-4/3Csq-uLE9w-kwwNlVlgVK_82og0rx28QfQlNgdg_uUPidhNbO786OsGP_jVv9Yku5syhnCPX1hq4wf0IB2nnAoFWBu3xKKuXPD_22JRT0U02k1bc8iLhIIyA0HEimoY3nXstFhNnw2zLWAd7e4TtRSS8_Qf5MO3BW5UJhfqLhF0?purpose=inline)
+
+## 4.1 Theme selection
+
+Include the following theme options as a configurable reference library:
+
+- Boreal
+- Desert
+- Tropical
+- Countryside
+- Temperate
+- Harvest
+- Winter
+- Delta
+- Rustic
+- Swiss
+- Step
+- Autumn
+- Links
+
+The application must distinguish between verified in-game themes and additional visual concepts. The available themes should be editable as game updates change the options.
+
+## 4.2 Theme comparison
+
+For each theme, provide:
+
+- Environment description.
+- Typical vegetation.
+- Suitable course architecture.
+- Suggested terrain characteristics.
+- Suggested backdrop.
+- Suitable grass and foliage combinations.
+- Suggested water features.
+- Recommended course styles.
+
+Allow users to compare several themes side by side.
+
+## 4.3 Theme-to-concept matching
+
+The AI should analyse the user's concept description and recommend:
+
+- Best matching 2K25 theme.
+- Alternative themes.
+- Recommended backdrop.
+- Suggested automated vegetation settings.
+- Suggested natural terrain settings.
+- Recommended water level.
+- Additional manually placed environmental objects.
+
+For example:
+
+A rainforest course with abandoned agricultural terraces might be best represented using Tropical, with additional manually placed vegetation, water features and custom terrain sculpting.
+
+Include a warning that the game's environment themes affect the backdrop and automated vegetation, rather than automatically recreating every element in the concept.
+
+# 5. Real-World Golf Course Research Studio
+
+This section allows users to research existing golf courses and use them as architectural inspiration or as the basis for an accurate recreation.
+
+[Siam Country Club, Plantation Course in Pattaya | Thailand Golf Resort](https://images.openai.com/static-rsc-4/itUeNvpRLkYB_jmJVqeOJvzru9LKunFUL17oQaHVkeQLlh0CkDKk4lwd6-T4o9HDnMxuEFiAmIi_GLxIRVrx2N8Z2WUd9gQxWYqN4oPlIOrjWojigEkW9mEiStjK_mauSFH1XSK7wjenqwSkLYtu8qJkiCMadbrM5dmhC6EItxc?purpose=inline)
+
+[Scorecard — Duxbury Park Golf Club](https://images.openai.com/static-rsc-4/tv5Klbw1DZ-bpu1-5spg7VAas-pKnl5crUGfrkJbDNYZttca7T7dtA2kjGmsl2Y_eNI8e419JGG7-GWRmXm5WLhOqa_QzmmMIskfJUPFKscUBr7xxWAmQM1_dgI_ZIhPmtvB-x8ChKXPqrbeq_ZhuDwIytViodDuNPPY6fqYIeU?purpose=inline)
+
+[FLC đã dùng hơn 1.500 tỷ đồng vào việc gì? - CafeLand.Vn](https://images.openai.com/static-rsc-4/VsvOeqbDRo4UFCqbTbErdfwMnEEkcnXW2puTALB-3XT-jNgVwNvpRu6DL-hKur2sxqqKdaSDC_APyXK_xBlzvMOSEzIrnwHn-WenpMPgL0miog9SsQAxUhKPNIPapK-S7KFYMyj2ujjr2e3amE0DN2KA6DEpXE7xKTzzsh_Ohag?purpose=inline)
+
+[Construction complete on new Dhoho golf course in Indonesia](https://images.openai.com/static-rsc-4/TrKXDy594jg4JoyogVd3QePrPrrb9Gkq8-DbkvKcsvzwxedrVj5QAh0C0oOHoP5gQQ0I14Q4BaZBkgP40PNFoXyoFNLOhKEpF34qFX2DSRmQBZuhe1olQpLbKXiBXcdOa6oXunO4JHYgQqKPyHeRyn4g6K2fORI6jeDULS__1HE?purpose=inline)
+
+[Golf Club Senza Confini Tarvisio, Tarvisio (UD), Italy - Albrecht Golf Guide](https://images.openai.com/static-rsc-4/NvAGJs5Z7PoIzu8-ci5aut3LbLno8RVUleuyNibbrAFujOnB4PeW0dIMY7rag5wBR6sHRvZvCzNXtTvJkGVSiq8DUHLf7JWNSGFPTcs6OZNV2LUXDAcZJkKFpXv4zZd2JhWa9afacbX6l__ZTtRDmPptObSXa1gAV2M2KxStu1c?purpose=inline)
+
+[Ponta do Pargo Golf Course Madeira](https://images.openai.com/static-rsc-4/JRp8G039ckSrHtJHuHaCwzGWqpo51WAZg2LkV-T8F0vLDi06d0ewn8CwsxvfOrWPmIXh_lYSEu2jcstZkCDOainJ9bqpGl7KCe2oBx7TP8iGbwHGBOOO2utB63QImOn7x_aT49gAvu9dOyxxe44MYU9-cUVm_QFZbQJcGuYsh6g?purpose=inline)
+
+[Kristine Kerr, Kura Golf Course Design, Christchurch NZ | Kura Golf Course Design](https://images.openai.com/static-rsc-4/nf6nypRE-u76Ga7Nx7nhdJBTG5XVis37o0QbzuGjgoZ4l5Fiw3kLtInZzjod4OBrdLsXqoSTjG9GR5c9O8Yp28lswmbu2yebEz9rHWu71vAn0fAa_hEGasmH_KX3rm1Q8oSV2ibOTGFPuxKFXyskh_aXPLDiCRRedZTVoIrfCo4?purpose=inline)
+
+[Plans finalised for series of new holes at Brighton...](https://images.openai.com/static-rsc-4/P7JTJbKzYvfGwwMhZl_GzwrJXJpGNRZCYvakvSx_v0jcbMRHxaGYL07LKtxeazL33MdN9f01MG6kJo_VJjPfYgnPo6Fuc6LtpBKV1NHVkAirestxb2kYvg_SSs9rhjsn5Tx2Ppho1eipYqH_bLc6bhlK61nToYFf7DA0AvnGgAY?purpose=inline)
+
+[Bethpage Black Golf Course Aerial View](https://images.openai.com/static-rsc-4/VeGrt5SFOKe8ntUX9Xh09piBm0MNfU4Gj9HwPXMcQA2N3dy0uo8_1ELTvQfVYsRDU-tux6Ex50nb2V_SwdytRceW6D8pozq-THVe-jWxtaOLOtstvovV7x1Ks_X7lNmzdQ5UmUi0pDfdUJrARuH-F7xvEkCM0LkRbT-008QqC7E?purpose=inline)
+
+[EKISTICS](https://images.openai.com/static-rsc-4/CG19Dhi9aSkReiUNe1lEV3jFWTW0L4ZPosxROGmN4yrojvQ2xfJHII8vx84T4_2BFjjiFO0oh0V33Z3DH1IdF7_PIzPU8nZLcnS3KJ07J3g6W15b6ZMmT5elWUjau3bo9kFpUWA_tD2tRFy1wPpwkWI2dA1ziuV5W6S3fJXYbWc?purpose=inline)
+
+[Crystal Downs, Michigan USA - Peaceful Golf - Global Golfer and Guide](https://images.openai.com/static-rsc-4/YNnPX6LcroMFrJbSiG1Fh3QO1a5DN97i7UK_ot9QJnyqmwYvudE57YJ14FNMS108qEup7u9-funUQm-RIRPJmcrrmAhkAymPVOFXmTjQ3nLEMOwNtZcQ3X6gSX9LgFFOYCRqR564JahKxIAP20aD2VYs_LooB2f21JpaylgcUkw?purpose=inline)
+
+[Course layout - Wainuiomata Golf Club](https://images.openai.com/static-rsc-4/7jj7HKNdzq1iBdi5vqQfp_5mps6tsgHOMLIcectknVWVBYQzsEzQr3dpyyUbbwIL81XvjJ77TFMRzh4bFdFcvDAJr0oGmDw7acCNBY8KniuaAGTlZ5MyQ6jy3wlNE7cNgqUht3A8fQQDNKZ0nQV-nF3cylhGNNPrv5GRe23wqaY?purpose=inline)
+
+[Masterplan](https://images.openai.com/static-rsc-4/YA2xssZDDjHztd2owh4IYCITJU6SdEVJ_bWMfnwy0Y6w7lzLCWJ2ZlZ0I4xoqyfuaRvoafg-uWuWPZ1AJxXUgINhbndTJtfpg8s2c7H-ZMEnh3HUjfJJ2LhqE1XMY428FAp9JgRxfKT5ZZihbBvWTSPy9eRvD0ekixkBYC4YCSY?purpose=inline)
+
+[Golf et projet immobilier à Ifrane : Construdata21](https://images.openai.com/static-rsc-4/D3Xz_ZGo62qm23liIgA_9-I0Zj4QB4y7oijDaueloj4spFAG2pyQCZqZ1b7P8WZC3BNC9CrMFe7tT8miFStWJO9JsIoX3fPNjPSb9yNWvf0QQwI2LAitKP-_3kXdl0-d47vSCgUJ1T0KVYr8AwlX4J7YZN5Z_mcf4J5csOvDRPE?purpose=inline)
+
+## 5.1 Course search
+
+Allow users to search by:
+
+- Golf course name.
+- Town or city.
+- Country.
+- GPS coordinates.
+- Golf architect.
+- Course type.
+- Geographic region.
+
+## 5.2 Research information
+
+Where available, retrieve:
+
+- Course name and address.
+- Latitude and longitude.
+- Satellite imagery.
+- Aerial photographs.
+- Course website.
+- Course architect.
+- Number of holes.
+- Course length.
+- Par.
+- Hole-by-hole scorecard.
+- Individual hole distances.
+- Course rating and slope rating.
+- Landscape characteristics.
+- Local elevation information.
+
+## 5.3 Map integration
+
+Integrate mapping functionality using appropriate geographical services.
+
+Recommended integrations:
+
+- OpenStreetMap.
+- Public satellite imagery services.
+- Government geographical information portals.
+- Public LiDAR repositories.
+- Digital elevation model datasets.
+
+Provide an interactive map with:
+
+- Zoom and pan.
+- Distance measurement.
+- Area measurement.
+- GPS coordinate inspection.
+- Course boundary marking.
+- Individual hole identification.
+- Tee and green positioning.
+- Water hazard identification.
+- Woodland and vegetation identification.
+- Contour and elevation overlays.
+
+Allow users to save map snapshots into the course project.
+
+# 6. LiDAR & Terrain Processing Studio
+
+Major technical feature
+
+This module should provide an organised workflow for importing, processing, visualising and preparing real-world terrain data for PGA TOUR 2K25.
+
+The application should support the community-established LiDAR workflow using compatible versions of TGC Designer Tools and associated terrain-processing utilities.
+
+[Eaton Country Club — 3D Data Pro](https://images.openai.com/static-rsc-4/YUnlnbFdtRUJ3EN8tfL9QxJbyJChtwTJLvzLJC9lWGe3cAQJ5k8oYCAcaZb774BjGosJeyWwIchIp1DLMoWIi_ViNOVg6p_8Ex0utCmRfa93o2sSmvl4N-9MnObS1sLPoWWW-WPVMdBNmLbaDk2XzOmUJhEGkIV9eAfacc-5vb8?purpose=inline)
+
+[Designing a Golf Course - Autodesk Community](https://images.openai.com/static-rsc-4/lQlKPPPiiYhqxCiXyuMrrzCQMBocB6nHZArLt0FA71D1SX6W_9H8LUf2Oqh8uFDwwQ1irSOqlo9j5_r8WtitUhhGNGGhfbpDAwbbCprpVUdn-c4w3sOTcd2Ja2JWvsMJPJ6nrNjUESnVOqtPmXpicyL1JvkkS7rX7u5zQ-7iqg8?purpose=inline)
+
+[Create A Hillshade From a Digital Elevation Model Using EarthPy — EarthPy 0.9.4 documentation](https://images.openai.com/static-rsc-4/JBBBFol58y4xUo2zLpSLsRFVnF58znTZhnvRlEUHrJ67hst2RauwlM5hx3yUo96tExwcrZiP6Ijs_BquekPpX6vNfF8LQ48vTPPedwhyB6F_baLW9C11Ab1_EDMNW8U2CnJyp9mk7-3mVLMl0EVw4SQy870HgzdxXHFrCuUhSNc?purpose=inline)
+
+[ASPRS Certification of UAS Mapping Professionals: Why Does It Matter? | Commercial UAV News](https://images.openai.com/static-rsc-4/gFwJkOn7VLMIqdtHWbM0Kw32Xj3eYUz3OzXmHqEFdPD7omCepEiIvr5y1f9tCdrn5aLGNl4KHRV8PPfEt8fVCHrcP_QhwvNAEWxckF0K0bOW39NsSNxGloK_Zt6o0g68ebA1g6gWEySY9_Sd3aMy2LZNmYotFjQ6MHqPah1DVjc?purpose=inline)
+
+[How to Download & Install Free GSPro Courses | ProSimHQ](https://images.openai.com/static-rsc-4/3ZuqzlbeQBNjOVD-TFczxMAz56V3YYKoS9ce7svFPQRseyb0GZCgrJuhAL674JjxIjbAz_M5D0c83OYqEAAnqMIwLZGbJdYt-QZ0CUYoh60ufmxIhizTN9W9z49Jg8dqhCEHu_zsccwtENewoqsOWiDrw7GXaPW6wOMw_NjIkZ0?purpose=inline)
+
+[DEM Grayscale Maps](https://images.openai.com/static-rsc-4/RS74mI7GzH53YFui6aXHgJH-2ySkiaWpc_fCsbQwlm0O5l8mhhttuNpMH0mkirk1lM4sH2pytXuj0j4ydqXA7WiLKOAf1sV23tkW0TEbEFDMe4hpySUl4Ayu9DKo22sTeiMO5Ku0_C8F97QxZrZLW9c-sYExfvBepBEYjkVlwRg?purpose=inline)
+
+[Case Study 7 - Golf Course Survey – AppsinCadd](https://images.openai.com/static-rsc-4/1gqcslGH2JmUwcjGPR8UbKsQp0PTt78I71UkRPlCh_GFRw92mvqV5Ay0UZKSQZOFRYa_viZZshWC9uYahgvr0QeoEG0GAi0SwL0KIflBjdkYga_8y3Ua9DCiUBr5ZnLUVynawBKWg_qI4vOTNqSYz50NsnrWJysxtb-CKk1DJug?purpose=inline)
+
+[Professional Golf Course CAD & 3D Visualization Services | CAD.Golf](https://images.openai.com/static-rsc-4/ZsS8O0QuYvg1b4iP7yA3scdkwq-QNCyfvXFD_U-m3LRqnvQEq-SQfRwTKY-6NlDQhP7GgxooRSI7H3GVgRUBPE-31oAr6YU71YxxKO7poxtYPeBU-RqTI1BjBZ_cLb8ypwt57w28oRPoVrHH4AQw0_2vygVrSQGgd3-d7uHcPWs?purpose=inline)
+
+[GS-1500N LiDAR 5 Echos Long Range Detection Aerial VTOL Mapping Soluti  – easyrtk](https://images.openai.com/static-rsc-4/HlEnlPWm6MBIykcwXmwJ2NFpnYQJojN5GS31rYkn1mrc5Qm7a-uP3ax7ptMNsp13CPHMpM5yqJ8Jl9Nv7VyNWYNUKlxvFUndZvsK4Awj5-ktwMCDpo8QdsIqAq42DmVzcjx4UDC_9WqtN3Qa3mcxJUypv8_WreveOppBk8OacBI?purpose=inline)
+
+[8. Visualizing and Processing Lidar Point Clouds in R with the lidR Package — Remote Sensing of Cultural Landscapes](https://images.openai.com/static-rsc-4/eMyZP5MLFwQZIP_enJrJ_TCZK5HyV5vvsq8AaNuOr1rf9b751UlbCDTuN-dyFO0tAYIjZiyOARpJs44o5_vfpjZ4YoCaWFKHJ1cFa4foqKE15-AqWvH0YhcfHBMjPVj1qYnkv7S7219QqLg6zkLZgwNsX9BQrGpoHR6W38ZlQGo?purpose=inline)
+
+[GOLF COURSE DESIGN & 3D MODELING | John's Portfolio](https://images.openai.com/static-rsc-4/0vkK8pcfYADQmHFahM93Dk9TrTnqi1iqUszoPr08nO5NCbLkYfnV_6Pej0D_OY8YkHSgnOQXhU7jY3F8sZl3kcPE9CDnlybfbl3IYSeUD-yijfLQyTwWCJQ-VuNTuvRwio5BjL9UZT4CIBl_SbTv7btFCdy4CQreiIG_dLB3xTQ?purpose=inline)
+
+## 6.1 LiDAR file importing
+
+Support common geographical and elevation formats:
+
+| Format  | Purpose                           |
+| ------- | --------------------------------- |
+| LAZ     | Compressed LiDAR point-cloud data |
+| LAS     | LiDAR point-cloud data            |
+| GeoTIFF | Georeferenced elevation raster    |
+| TIFF    | Heightmap image                   |
+| ASC     | ASCII elevation grid              |
+| DEM     | Digital elevation model           |
+| XYZ     | Point-cloud coordinate data       |
+| CSV     | Coordinate and elevation data     |
+| SHP     | Geographic vector information     |
+| GeoJSON | Geographic features               |
+| KML/KMZ | Geographic location information   |
+
+The application should identify file types automatically and explain which processing steps are required.
+
+## 6.2 LiDAR processing workflow
+
+Create a guided workflow with the following stages.
+
+Stage 1 – Import source data
+
+- Select LiDAR files.
+- Import the target golf course location.
+- Import OpenStreetMap data.
+- Identify coordinate reference systems.
+- Display data coverage.
+- Check file completeness.
+
+Stage 2 – Coordinate reference system
+
+Automatically identify the coordinate reference system (CRS) where possible.
+
+Allow users to manually select an EPSG code.
+
+Display:
+
+- Current CRS.
+- Horizontal coordinate system.
+- Vertical datum.
+- Elevation units.
+- Geographic projection.
+- Conversion status.
+
+The application must warn users about mismatched horizontal and vertical reference systems.
+
+Stage 3 – Point-cloud processing
+
+Provide options to:
+
+- Filter unwanted points.
+- Remove noise.
+- Separate ground and non-ground returns.
+- Generate ground-only point clouds.
+- Identify vegetation.
+- Identify buildings.
+- Identify roads.
+- Identify water features.
+- Create a digital terrain model (DTM).
+- Create a digital surface model (DSM).
+
+Prioritise ground elevation data for golf course terrain recreation.
+
+Stage 4 – Heightmap generation
+
+Generate heightmaps from the processed elevation information.
+
+Options:
+
+- Resolution selection.
+- Elevation range.
+- Minimum and maximum elevation.
+- Vertical exaggeration.
+- Smoothing.
+- Noise reduction.
+- Terrain cropping.
+- Boundary masking.
+- Elevation normalisation.
+
+Allow the user to inspect the resulting heightmap before proceeding.
+
+Stage 5 – Terrain mask editing
+
+Include a visual mask editor.
+
+Allow users to:
+
+- Paint unwanted areas.
+- Remove surrounding terrain.
+- Define course boundaries.
+- Highlight areas to retain.
+- Mask roads and buildings.
+- Select terrain regions.
+- Preview the retained area.
+
+Use clear colour-coded masking and provide undo/redo.
+
+Stage 6 – OpenStreetMap integration
+
+Import geographical features from OpenStreetMap.
+
+Recognise and display:
+
+- Roads.
+- Buildings.
+- Waterways.
+- Lakes.
+- Woodland.
+- Paths.
+- Land boundaries.
+- Other useful geographical features.
+
+Allow users to select which features to retain, discard or use as reference overlays.
+
+Stage 7 – Terrain preview
+
+Display the processed terrain in an interactive 3D environment.
+
+Include:
+
+- Rotatable camera.
+- Zoom.
+- Elevation shading.
+- Contour lines.
+- Heightmap overlay.
+- Course boundary.
+- Water features.
+- OSM reference overlay.
+- Terrain exaggeration controls.
+
+Stage 8 – Export preparation
+
+Prepare terrain information for the selected PGA TOUR 2K25 import workflow.
+
+Provide:
+
+- Processed heightmap.
+- Terrain mask.
+- Coordinate information.
+- OSM data.
+- Terrain preview.
+- Processing report.
+- Export compatibility report.
+
+## 6.3 TGC Designer Tools integration
+
+Include a dedicated integration area for:
+
+TGC Designer Tools
+
+Reference repository: [TGC Designer Tools – GitHub](https://github.com/chadrockey/TGC-Designer-Tools?utm_source=chatgpt.com).
+
+The application should:
+
+- Detect an installed compatible version.
+- Allow the user to select its executable.
+- Check compatibility with the selected PGA TOUR 2K25 workflow.
+- Provide instructions for creating a blank course save.
+- Organise the required files into a project folder.
+- Prepare source data for processing.
+- Launch the external utility when appropriate.
+- Guide users through heightmap and OSM import.
+- Validate exported files where possible.
+- Record the tool version used.
+
+Include an optional guided import sequence based on community practice:
+
+1. Create and save a blank course in PGA TOUR 2K25.
+2. Back up the original course file.
+3. Organise the course file, LiDAR data and OSM data.
+4. Load the course into a compatible TGC Designer Tools build.
+5. Generate the terrain heightmap.
+6. Confirm the correct coordinate reference system.
+7. Create and edit the terrain mask.
+8. Import terrain and mapping information.
+9. If combined importing fails, offer the documented alternative of preparing terrain and OSM separately.
+10. Export the processed course file.
+11. Back up and test the result in PGA TOUR 2K25.
+
+Critical compatibility requirement: Do not assume every version of TGC Designer Tools works with PGA TOUR 2K25. Community releases and import methods are experimental and can change. The application must verify compatibility rather than promise a successful import.
+
+The app must never overwrite an original course save without explicit user approval.
+
+## 6.4 LiDAR quality control
+
+Automatically identify possible problems:
+
+- Missing elevation coverage.
+- Incorrect CRS.
+- Incorrect elevation units.
+- Unexpected vertical datum.
+- Excessive terrain noise.
+- Incomplete point clouds.
+- Poor resolution.
+- Incorrect terrain scale.
+- Heightmap distortion.
+- Mask alignment errors.
+
+Display a processing confidence report.
+
+# 7. Interactive Golf Course Masterplan Designer
+
+Core design workspace
+
+Create an interactive top-down course planning environment.
+
+[rasindustrial - Blog](https://images.openai.com/static-rsc-4/PqR2p3iVVGcv48s4pMfqXVF05x1e87e9iPwvCoiFUR1RNsVtu3aDl-LKHSbx8WWArdo4YuCCO1kk5PzdoSZCSsXk-vFqtX0dQcF_C584vmArtuooPZqSfdfl294xG_mnBpjb7yRRGppn2UJjSbs4a4q-QVsV62xUh4VL-5BzE74?purpose=inline)
+
+[Why PGA Tour Golfers Turn to Statisticians for a Lower Score – Under Par Performance Golf](https://images.openai.com/static-rsc-4/XUjZuEqmrxkW048kDrHsxghNnlM6rsnh829agoeheOtcZxSvhKIUBsDG6KbF52OvDWn3oVY7s2KwDN66EYH7zZ0qgN3ZkSJDAZDgs13h0pnuOX6mI_68Xuk8eVV5NVdzkOvy3YFGFR7Ia7HHHeFx61ImSOKPQzrCJW5mCsASIRg?purpose=inline)
+
+[Design / Build — Farrow Golf Design](https://images.openai.com/static-rsc-4/FPSmoMvFs0fKQGzqkVUAvLZm1pF4HotQASjcGhwsHykGZk5bFfrkgUoiVPymmFI8zJwpyudM8l884fdgQ9-oXUNB6FWJNbQNTV00vxyWiCOKU_iUsOuFTNZrKtyxhYdRNYNaqBMR8fFiQLUzxmUPzkCtKUDa12XW58hLA0_-wuc?purpose=inline)
+
+[2023 Senior LPGA Championship - Sultan's Run](https://images.openai.com/static-rsc-4/lEHcYSAArqyqpue6GWCpomPUjCZoPLF47fL-gQqXaj27vXSO3dacjUs7bzLZBWubyTxg-A0X6POWMmw_CTXyySiBn_Kw5sV_my4v5ia52sNgzZDJNUq1q9dc10LckQzG-67MU9ce9pB0sb-OQddHjmhGuOri1iWvpBCufrC_NG8?purpose=inline)
+
+[Services — Andy Dye Designs](https://images.openai.com/static-rsc-4/RjT0QZuPAZdgAVwb1pXNX4xaFZCM4q2YevHsnxNnO0iOv3xj2-0mxuw14YqVLz2YE3k_pgxkd2443LKAM1s5uCkmVwSv2kKrI-Luq8kJKF5S0arh_zboIJHxjlIYcOL8G6jyK9d-nEg5VFMunZHZjnlEEZ2aO5RDvZ-rgFo7sNM?purpose=inline)
+
+[Mike Nuzzo Golf Course Design - Innovative Routing Studies](https://images.openai.com/static-rsc-4/IS54slntMTAR0A99uV0J-cA0QGE2abz-v8WylXwfu8WRs7fyCxSC0WDMKJS3Zgvsx3ee3jCTqz0tL2SUHYJ2SiI9hoQ0kZx2rHXg1pPED0yifB1dMEyBWygKxkTl-EENRa3bgVr6HVwBYEnDvf3J1GB_9mrAnZABrvFyWg0BTkA?purpose=inline)
+
+[John Fought Design: Lines up array of new projects for 2025 | The First Call](https://images.openai.com/static-rsc-4/uIGoahRIpscasaynK6ip35Y2yleEVJaFMghfdnIX15XbnuYoMZ83xy7f5PaFVd448f5sikPO8_XP5cpimAlbWaKGmMGWHeCB3uKgI3Ro1r4DF2lfn3yKfHu5N9I2kvcFkgZ4yA1KRBfpQgo07BxxPncijzEbfUKJM4gbW3rwNEY?purpose=inline)
+
+[Unsere Golfplatzplanung Dortmunder Golfclub - Städler & Reinmuth Golfdesign](https://images.openai.com/static-rsc-4/eZbELGXCDH_FQ53M5ZPaVdnNA_YCdy4pv3JcvTm_3Ud0kp7ZUPoqfCb_f9K-4LRIZpN0sBXnfNUKgc2PTiAOqpnwRYixP_xusjkANw0fwA5wLqHwMNjm8P-kIa6ntufAp76H0HLmKi3X_wyQprDka5opgjmBip6cICc9ftKljo0?purpose=inline)
+
+[Achimer Golfclub](https://images.openai.com/static-rsc-4/Hkrt2kN9ywmKzrsHAPe0fPPUjYPT3nb7Dp9wT9S1LyHpeDxu-EGoSACkF4BS3WH5AS-ht0Jw1xQbihX2D2oU_uWHbhVSZSGtwdG9-klGhv9c-uQVSiQRbYxcT3iymCKxTyNRLUvouj492UovqBLw4OTF0WenWUfYB9JUEBrZa5U?purpose=inline)
+
+[Index](https://images.openai.com/static-rsc-4/3butlFqOXFjOFEwzdrqHGMQJPaIhcOGZrV-bPKSmHfM-hTSEHKDM07elsWr0prqJjBVh8-pSlFOgLIicB1kWikO-bO-3CpejO7D0Um2fVlewsSbjb8__OF8lAHw4_cWSFmI3Wj8NMKstv3mKkalcD5fL_uKFO_gE7J1mw-X0xqE?purpose=inline)
+
+[Crimson Ridge Golf Course — the mbtw group](https://images.openai.com/static-rsc-4/BxgbEyzVSXhebWEdYg2BZDpsnx81HoeT4Qr7NuifNU1EHsHsPHS0mE7qworVXZ7bDY9I9u6k8G5Y_ZjobTHj-R8di_1iPPkPWwnheMLhinpcE2Eekxxn6EvalMaled1PAVU5b0CRb0BEe2J-q9G5O_aLOOQpsz4H5DxWdAWww6k?purpose=inline)
+
+[Unsere Plannung der Golfplatz-Erweiterung »GolfRange Grossbeeren« - golfdesign.de - Städler & Reinmuth Golfdesign](https://images.openai.com/static-rsc-4/Z7eT83q9ShrSf5OK4tSZ_7B5FacmUzZXHLh0HHIpb9oJdkozX5dkfQe7PcnIJdDcEK5VfK7ztv5-Ccwzt3s0-DZCUb59Ks366QhMLL_NynEGo1LAfR7t-klfryCE3Hi5O52O9klD4ahLCRjdUctTQ8JurxpMJ7e7MjR1Y5W2dkM?purpose=inline)
+
+[Ignacio García Golf Arquitectura: El proyecto de Ignacio García para la construcción de un campo de golf de competición en Jimena](https://images.openai.com/static-rsc-4/RF1s16eWuIdyp5JxsC76LD75K6JoxenDjosW1ZEliw2wLQq86a974Snsi6cDvEHtEqxZuZxGKbe6fADnvP5Kw0ZNqGu1d3y-thjIUsLsJymxOOAJgmMhFPNWJhskIN-dNxXfy3s4dhnOe3inB3NG4nv9dVU5EHuvURbukXu-wsg?purpose=inline)
+
+[Construction complete on new Dhoho golf course in Indonesia](https://images.openai.com/static-rsc-4/TrKXDy594jg4JoyogVd3QePrPrrb9Gkq8-DbkvKcsvzwxedrVj5QAh0C0oOHoP5gQQ0I14Q4BaZBkgP40PNFoXyoFNLOhKEpF34qFX2DSRmQBZuhe1olQpLbKXiBXcdOa6oXunO4JHYgQqKPyHeRyn4g6K2fORI6jeDULS__1HE?purpose=inline)
+
+This should be the main workspace for designing the overall course.
+
+## 7.1 Course plot
+
+Allow users to create a new design using:
+
+- Blank fictional landscape.
+- AI-generated concept.
+- Real-world satellite map.
+- LiDAR terrain.
+- Imported heightmap.
+- Existing course reference.
+
+Include configurable plot dimensions, boundaries and scale.
+
+Where the actual 2K25 plot limits are not publicly documented or verified, do not invent values. Allow calibration against the game or imported reference data.
+
+## 7.2 Hole routing
+
+Provide a drag-and-drop hole routing system.
+
+Users should be able to place:
+
+- Tee locations.
+- Fairway centre lines.
+- Landing areas.
+- Green locations.
+- Pin locations.
+- Water hazards.
+- Bunkers.
+- Out-of-bounds boundaries.
+- Woodland.
+- Paths.
+- Clubhouse.
+- Practice facilities.
+
+Each hole should have a configurable number, par and estimated yardage.
+
+Support 9-hole and 18-hole routing.
+
+## 7.3 Routing recommendations
+
+The AI should consider:
+
+- Terrain suitability.
+- Elevation changes.
+- Natural water features.
+- Existing landscape.
+- Tee-to-green direction.
+- Hole separation.
+- Safety between neighbouring holes.
+- Walking routes.
+- Course variety.
+- Strategic interest.
+- Overall routing efficiency.
+
+Provide alternative routing suggestions.
+
+Allow users to compare three possible layouts before selecting one.
+
+## 7.4 Hole routing validation
+
+Identify:
+
+- Overlapping fairways.
+- Potential crossing holes.
+- Unusually short or long holes.
+- Excessive elevation changes.
+- Inadequate landing areas.
+- Potentially unsafe adjacent holes.
+- Difficult walking transitions.
+- Unnecessary repeated hole designs.
+
+The application should suggest corrections rather than automatically changing the layout without permission.
+
+# 8. Individual Hole Designer
+
+This module should provide detailed design tools for each individual golf hole.
+
+[A Hole-by-Hole Tour of Oak Hill Golf Club | OAK HILL GOLF MILFORD NJ](https://images.openai.com/static-rsc-4/SEkXWG8hvKtWy8cd2L9zWdCMarqacbZiuqccCOzCcOo1qDa89kHr1b1QmjeR1zbIQ3pyZSc7pkEQWDY3E1FHOK_8gZZD_QD0SJPN7WeN-GgR69V5eokkR5QdyKftmALEP-vObK19wk7fE4u6et8oS3q6JRiHN7BGetU9-iCNQ4Q?purpose=inline)
+
+[Marriott Golf: Celebrate America's 250th at Williamsburg Lodge](https://images.openai.com/static-rsc-4/3h17UwNxpWl3HdCCE_-Ouvyt8PKDMwG4tot-hIzc9xax2sQGdXpfF0rhVzSHD12qdTs1BwFIYsGrayhu5k5P8zgKL1Cm0Il3GNj5wEnLXXjLkxkX7C_uqdPnmPODkItiA5cRCMoNkXrTkm0ktK0HgLiir5qFHKj4mOfP4W5Jhck?purpose=inline)
+
+[Championship Course - #6 - World Tour Golf](https://images.openai.com/static-rsc-4/kDt81f-JpPhWlzfhW-hApnrbVhee_Vm-TqKGkZVUbqMrfW3bE8mszIlHGFPOng53mr3PY49XnQc01amPduL82U8-ZDZLZm9O7nCx-MY_w6RfVmDiJIdhneY0itJlPsyJfMCKdXclXc7--K7mwvWnF4ccnLZNDN8JwehRGh74Buk?purpose=inline)
+
+[Course Tour - Oakmont Country Club](https://images.openai.com/static-rsc-4/JrjWlEHkftDCwsLK0fx-0phWqoZRm9LQgD4dIf--Xcx3Pk2UKYQsLflicUoFxpJALrm4JO1YBePb6eQAIwD_wQOG-nb9LgQbn7PJh1hVnD37utu0NaVZdXIHigUJb1Dlou-NaCRsWC3VLRDl2LtfX5ZQjsg_0SzqfRkjxbMjEOY?purpose=inline)
+
+[Play Long Bay Golf Club near Myrtle Beach](https://images.openai.com/static-rsc-4/f5LOqZu_3YfrVlsJ3yzo-kU3S1T44tlUhb40dQzwHrtudYwLMfoQnsGV7HhtHjlpBlmQEunOawTVFCoEHyENqx2dCESTRkVzQgOe3mh0-VzXhyKmmZ0SsaitXMA2d51nEH0sSDQvPD-Fk7CMV9vwG_6fCsAIPj6xWvR8YPka90E?purpose=inline)
+
+[The 15 best drivable par 4s in golf | Golf Courses | Golf Digest](https://images.openai.com/static-rsc-4/FCtjPNIR0oqxgxswkut7a5NQ13s7E2RTAwPdW7jwjzs35-B6GdWAQj3lmGh-5vUJ25G-Sw1knoZ2Ou_Jzp74sJ8nPxXws5eseHGxpbKBMMd7NJYpGJzrDTUd2p-QU-75-f9gkijD0DRoT37yI6eWgCiF9ve3nD7twggOkx_uqh0?purpose=inline)
+
+[ホール6 - コース紹介 - こだまゴルフクラブ](https://images.openai.com/static-rsc-4/R6mxOcYjy90S2wzodmqQ0g94bptvsqL8fBxuO5pdBIfOb2CagCup9jSegulOP21ANhnSc1l2w9Y-xzI15x__dxXv5eq_oizYSJowIjUP_LDdQpPnTsBiqMUULGmjrW8_v4v7BBPJAEFVjVtPt-U6ZpV9oK6WezfzF4ByIsF2QZQ?purpose=inline)
+
+[University of Texas Golf Club View Course Hole](https://images.openai.com/static-rsc-4/eVG3-_EfAK34MjyrJs-ougt8UjgQWh3z01iPlaPghENSKy5AHJ4LY0xhM9WDpKJKoBxx0pKpWehShjRfBx16Jpz1m4ebOM4vP0VqfM1fmcnRnjOp8WfQnEyzHIOQ-gxzmHKx8icnOsdJhDQjBQSzbFMpPdmSAkYzVX54K7BQQOM?purpose=inline)
+
+[PGA West Stadium Course, Hole #17 - Fine Art Golf Prints - Etsy](https://images.openai.com/static-rsc-4/DYm2R0abnAPv5H7Yx-gECcZQdvq_BGxw1_281B5x8ch7Y9WBEDzTMXyjqYgjwPSoWNcTxO2GrwJxxEvUtYLh7iWpnOBMjBaNNaKz2aniyFZmIQjwAv3QpRDjnAphaRoMZB0gvPuUqfgOi69RGanUyfqh79PhKqmBFNypMeXx-k0?purpose=inline)
+
+[US PGA Championship 2024: Valhalla Golf Club Course Guide](https://images.openai.com/static-rsc-4/cDEw44j28X4yKD4I1oSnMOHYpfxpXd-ILhHWE07MlaH_m72nOa4r7sjSoIKZywwe80px6BBFcT-pFIXpj_p-hyvTmzaEyHZbJ7ihhCVs2HARf4Sqwdb6eHkPhVAClX8ghzpUCKkTbIHBXPVbohT8AD6cNVd_nf5AbR2pY9168Bc?purpose=inline)
+
+[Hole 1 - Pine Barrens](https://images.openai.com/static-rsc-4/JbQuZcrkS82E3Jna7pw-CT1XqW-BsG8Yscbh_ZTQjq68H-mInH7DJiU2s4XfKRTKhi30r0dB3ZF1dRodiKnmSWcNgED33_V7L0HPbH3kt_cjhWA0jHDyYbvy-occg2U_j1ntQgdAzHZAVTFixgpWhj0D0Bag4zEvxfA0ujoAsGg?purpose=inline)
+
+[Hole 16, 157 yds, Par 3 – Erbil Hills](https://images.openai.com/static-rsc-4/Ffk2mvEtROwZNn-e66bUPcxma6bMACjzWvoWX9itYZdDLOqFmS3Ebnu7blc-Ut3o_vJuRVNjItaBHfO1kVe2PP9y58YV1N7bc_PfN7N-rOZ3botTTtVogsqyT8APGir8HydOi71tG4t8pVfjDLWEy21OGJwxfMISOJsL-N9FzCw?purpose=inline)
+
+## 8.1 Hole design configuration
+
+Each hole should include:
+
+- Hole number.
+- Par.
+- Total yardage.
+- Tee positions.
+- Fairway width.
+- Fairway shape.
+- Landing areas.
+- Green dimensions.
+- Green orientation.
+- Green elevation.
+- Pin positions.
+- Bunker positions.
+- Water hazards.
+- Rough areas.
+- Out-of-bounds areas.
+
+## 8.2 Hole types
+
+Include templates for:
+
+- Straight par 3.
+- Elevated par 3.
+- Island green par 3.
+- Short strategic par 4.
+- Long championship par 4.
+- Dogleg left.
+- Dogleg right.
+- Risk-and-reward par 4.
+- Straight par 5.
+- Three-shot par 5.
+- Risk-and-reward par 5.
+- Mountain golf hole.
+- Coastal golf hole.
+- Woodland golf hole.
+- Desert golf hole.
+
+## 8.3 AI hole generation
+
+Allow users to describe an individual hole.
+
+Example:
+
+"Design a 430-yard downhill par 4 with a dogleg left, a narrow landing area between two bunkers, a stream running across the approach and a raised green protected by deep greenside bunkers."
+
+Generate:
+
+1. Aerial hole concept.
+2. Tee-to-green visual.
+3. Suggested hole routing.
+4. Suggested yardage.
+5. Fairway dimensions.
+6. Bunker locations.
+7. Green shape.
+8. Hazard locations.
+9. Strategic playing options.
+10. Step-by-step 2K25 construction instructions.
+
+## 8.4 Hole design library
+
+Save completed holes as reusable templates.
+
+Allow users to copy, duplicate, modify and reuse hole designs between projects.
+
+# 9. Terrain Sculpting Planner
+
+This module should help users translate the natural landscape or LiDAR information into practical terrain sculpting instructions for the 2K25 Course Designer.
+
+[The 21: Cabot hits jackpot in Florida](https://images.openai.com/static-rsc-4/Aw2eZXVM6yM6NMqplVcBI3hoQ-z3tdNFI8bq8oPjL69RphzTfQcdSvPmQ4OQjfuPHi90ywFrBDxCTog34K6YianDLHgUipepAAP5yqS_PkiMkO0I-ROcH0rj-8kCoTanfiL4awGYZW6C6GX0VugTPsJXL45bT2N5dONiLV7O0QA?purpose=inline)
+
+[USGAが決めているカップ位置の傾斜はMAX1.7度！ 3.4度を超えるとアンフェアになる　では一般営業のコースの場合は？ - ゴルフ総合サイト ALBA Net](https://images.openai.com/static-rsc-4/5b1TIAdUOG3pfefEtX22QG5M9aoru0-00i90iKabeOHDdAP-f6FdtWAEEkg7n01n74-48NoW5WrRJVd1keKDuPd5EICkxxny-0b1JzVztgsUa8OBlCwQ2Yhig19Vo0M8bSep6WAOwkrEMJLv9AWbZqMSkTNk_T1DxpEWJFhtBnA?purpose=inline)
+
+[St. Louis - GOLF Top 100 Course](https://images.openai.com/static-rsc-4/WFRHnSA0tDRJMT8XTpMlavN80TzBYoPb0n02t-i53BYpZbvZv0VhppDW9Vm1SSnJybz8PhRTUeG87mkNRtvYtFMdjM2UQjkZOW7ngXOaorOahfK032DdPwdegfiyPB0yfuiEvDtq1J9g5l1_88rzBspOgFkXdxJcQCv1tAIKNsg?purpose=inline)
+
+[Professional Golf Course CAD & 3D Visualization Services | CAD.Golf](https://images.openai.com/static-rsc-4/ZsS8O0QuYvg1b4iP7yA3scdkwq-QNCyfvXFD_U-m3LRqnvQEq-SQfRwTKY-6NlDQhP7GgxooRSI7H3GVgRUBPE-31oAr6YU71YxxKO7poxtYPeBU-RqTI1BjBZ_cLb8ypwt57w28oRPoVrHH4AQw0_2vygVrSQGgd3-d7uHcPWs?purpose=inline)
+
+[\[설계\] 골프코스 설계 과정에 대하여 < 칼럼 < 오피니언 < 기사본문 - 골프코스세미나](https://images.openai.com/static-rsc-4/Vdf7OFArfNkgjHEfWr50qe9KK6O01f4ns1QyL350anKtT7GmR6KGOnawT93ZZm-mkmlRy25x0zn2zGf4-SN4hV88_Dhor5Z4EW7ehjwrW4XCyUXZjh9mc7AE3dxbRJ2A_wniYDmDvmafMEOv3oBHv9-zx-sH800NPfYOROTKdmA?purpose=inline)
+
+[The Wilds Golf Club (Prior Lake) - Allt du behöver veta innan du besöker - Tripadvisor](https://images.openai.com/static-rsc-4/Wd03tMlWCA0ZaPlS8oPY1AblTtHwyzbhGmDKQEke144noYjkERL8dbgc_PZmlD9FszCw2EFEdNjo_G7Rh8fPjYHzkALxNFdzPyI5gCzPyZrq9zWWL4bzPFisyM6GfKwJG6Aoa6Uvxkij4L0CLA4J1RpEwXidavqanNvOxrWMGTE?purpose=inline)
+
+[Joondalup Resort (Quarry & Dune) | Australia | Top 100 Golf Courses](https://images.openai.com/static-rsc-4/sLfP-zzvQz6tos5WDkiYDdC5dggpjB-V5_G899qXUrlmv_rFw9dSteLobM4PNiLjO_pocWqlosKr-VUu1FKes6VT-p76-5d12oERxweo0Gkq7RgBgVnvMxe6Hmd04wwkgmZLX7zmX8-IGBj8aGxEd1Hlmqc5soGrLia_aA2195o?purpose=inline)
+
+[Pfau Course places Hoosiers back on Big Ten golf map](https://images.openai.com/static-rsc-4/gEZcJ6SqQ4CbEafB8of1rnjCthg0M6hR3Ia3r5RtgGD_kP9WgydGKJuV9zxGfsZ8GNJC4Usen66SZoqsIREojVGe-u90Qe8dVooA7ygG4HqdXIyepEosfXoJySKTQQJ7lr_GJO0sNpUnmyExJDseu3IqRvM7gx5IqfpCgVVCa8U?purpose=inline)
+
+[Fazio Design tackles bunker renovation and more at Bull’s Bridge in Connecticut - Yahoo Sports](https://images.openai.com/static-rsc-4/ilbNWHJYJXrtkMAP78AOhEOexqQnHqQUK3QNckHPWvn-SNA76rKr8ccCaSoJDwxgcNmZY12fXLv0p__RZoErssq9-o7d8giatdXwbPE49dImi7hipwlPyJ68Yf6KGN_zWEPIngw-UQwH3L7-AjHJW4inmXvfcUDs6xgQiup1HkI?purpose=inline)
+
+[Koninklijke Haagsche Golf & Country Club, Wassenaar, Netherlands - Albrecht Golf Guide](https://images.openai.com/static-rsc-4/stMwPXWL5GhMg4jRNlNlIgKCr6mMxkfGTQN61-NL8Z46x3CGZo5TA7xaCB_QJKY9N1pZ18aSXxkdJVpQVZyiyqtR_k5Y2HDU6DF1ghsAifi1YqohstLTYTeJ47Uho222e4fskOFCdsFJrEYhk74jdTFnNcIGrA3KvSI29mxQYHI?purpose=inline)
+
+[Construction work starts on new golf course at JCB world HQ](https://images.openai.com/static-rsc-4/nHbSlp0SejL3itxkdf9f7roarnR-p-KigfkurIkMHucmYlqCxeWBtpwp1QkfKywbQt-e1NFdqNkwWL_jP6p69XC33Y1EjESsY4mbnmI301480KznsiF4RW8GRoVBbQxzBKx6pv1azGCKl4YNJt4q4K4iRSPD9mPW02oFzPp2hMI?purpose=inline)
+
+## 9.1 Terrain editing tools
+
+Provide a visual terrain planning workspace with:
+
+- Raise terrain.
+- Lower terrain.
+- Flatten terrain.
+- Smooth terrain.
+- Create hills.
+- Create valleys.
+- Create ridges.
+- Create plateaus.
+- Create embankments.
+- Create natural depressions.
+- Create drainage channels.
+- Create elevated tee areas.
+- Create raised greens.
+- Create sloping fairways.
+
+## 9.2 Terrain brushes
+
+Include configurable brush settings:
+
+- Brush size.
+- Brush strength.
+- Brush falloff.
+- Smoothing intensity.
+- Elevation adjustment.
+- Shape profile.
+- Edge softness.
+
+Provide before-and-after previews.
+
+## 9.3 Terrain analysis
+
+For imported LiDAR terrain, provide:
+
+- Elevation heatmap.
+- Contour lines.
+- Slope gradient.
+- Aspect direction.
+- High and low points.
+- Drainage direction.
+- Natural water collection areas.
+- Steep terrain warnings.
+
+Allow the user to place proposed golf features onto the terrain model.
+
+## 9.4 Terrain-to-game instructions
+
+For each planned terrain modification, generate a practical instruction.
+
+For example:
+
+Feature: Elevated green
+
+- Raise the green platform relative to the surrounding approach.
+- Create natural slopes around the perimeter.
+- Smooth the transition from the approach.
+- Create a natural collection area on the low side.
+- Add suitable greenside bunkering.
+
+The instructions should explain how to reproduce the planned result using the available 2K25 terrain sculpting tools.
+
+# 10. Golf Course Feature Designer
+
+Create a dedicated workspace for planning the individual architectural and environmental elements of a golf course.
+
+## 10.1 Bunker designer
+
+[The 152nd Open at Royal Troon | The Open](https://images.openai.com/static-rsc-4/7aX5ZW32dPONR3zA_XlT_BlCCLxjPN_CCTcScs3bCtqt4u_WgERWjN-U9O9fF-vfPzLP93dGDfl7-I1FP7H54OwYCCJXbpNq7vfh4Kr9MwQzP8nIISFMZ9NJgTU5NeEJEuhmszH55NDynForvMz6V5nlfFeXrOZUjKPbrJ0aA0s?purpose=inline)
+
+[Links vs. Parkland Golf Courses: Unveiling the Key Differences and Shot Strategies](https://images.openai.com/static-rsc-4/jyB-WizkmU6rfeh0PfLO_Qy-bF5e4Xb6bF8KRIMxc_0dQc3JXsrMaGTLAKp47hI4x1an90OJSx3P4WsiKiyCeexpIqPZFfMkR1A6J5PrtGhl5gJ12JERLJlFjs28hP26dIfJGLMv-SFIPUhZf6KrhOVb_BrJ1vnfyWapXPYK4K0?purpose=inline)
+
+[Picture Gallery — The Links at Northfork - Championship Golf Course in Ramsey MN](https://images.openai.com/static-rsc-4/SF-x_SPUkmAyZWPRAaClPtiVdvIDWn0QSBHl2h19dbTg9701PYojJ_fngi-1ZtYTa_LysBR8dA_z8ebxrHgi5azfnORL5amBl6GBTay4H37fRU_4azor1Dy_0KDYYOiZ8JtluezvTz5nmlVa5epMNvWOEG1MRCZeu9DXSzL6-Po?purpose=inline)
+
+[Aldeburgh Golf Club: Championship Course Review, Green Fees, Tee Times and Key Info | Golf Monthly](https://images.openai.com/static-rsc-4/fP4uWvVz9nrFF8bS0s7tLZ_g_X_FBLXhGkEoEqkMmNyRKIM58xRF7unO91WR5wYMRBTJ2cKa9rLRiMg_gLL3PvQCGSwQGSgr54wSxqzGVfniXEScsQJ2aa4mxOeP7v5DXA3PNRw3eVAMSWPms_rOEs6aZihH_RPIAcklSejpUws?purpose=inline)
+
+[AIG Women's Open: Royal Porthcawl course guide](https://images.openai.com/static-rsc-4/qh-feM_IHp4Y_WIIR3eUPhHNqZrk_vADJux0gpkgzo2YaCuG-W2AnO5TJxJG3fuFnGhyyEaMUlGpTGYBlq0zYXTM23018CYUhZRoNVLOqfBeo3r5-dsTr_HejNU-D3hqoRHuPnWVkoGtfKzh-lJixRY07urdpcXkCXRRfu3wPqk?purpose=inline)
+
+[Nye flotte billeder fra Lübker Golf Resort](https://images.openai.com/static-rsc-4/-wz2kKSIHeKrXlp2_8LgjJ207pfZq20VrS5ULdVJ1lZgQ62h2LzZgaijKzpr0hVWBa6MNpC1BKxM-OySVRl9xeo4StLaLFCXP34hYcCFwZqagI_DLdac7ksFU2DvalfSCx6xaSCHK06Yu4iKn8ST6_moJriA9sjPmI_yA2BxY08?purpose=inline)
+
+[La Reserva Club - La Reserva Club Sotogrande](https://images.openai.com/static-rsc-4/LfmJSgk4gKuBl404NvhIa8AUTfjowcM5pvgT_3LeAty82m12K2SEuMWkApf7DbXR5wtCbNqXWpD0SzmYcVeeW4APlQSW0e6WLFH5Aabgx7X4Qb9lVo9P4Ia-DvsCbEOzkfqZhwWp5yW6wShkNwylez3I_n2auE4xyPaZxElBe3o?purpose=inline)
+
+[Championship Course | Brookhaven Country Club](https://images.openai.com/static-rsc-4/NIMVB-AfZ-QrXAeKgpcB9i7T5CWHJ__DuQGQE_Fdi7UpftveyLQo5aRckvhSNTDKR9BpZmMOVmdyZxB0en-SfU6t8jiW0TehP8Z_kDqBt5qRaazJXU0hyRipcwXvH2h0RYqoMffpz26VwIDrVRPBlicmMrxJX5zpmY2YiM_iAYQ?purpose=inline)
+
+[Golfplatz in Pinehurst, North Carolina: Pinehurst No. 4 | golfurlaub.com](https://images.openai.com/static-rsc-4/Dt_kQOZrenCiQtzrSMD7q4JfJKqiMZ9uOKZdWEQgfmBxDzgC0K69Yn7PVQDwjTPZymvZjIUB9HjTkZeiBMEXeG-0QPgpX5xK72JEuwSIVc_xiaVgfJ5Sh0w1H7FBoK31VbZ8Zb0_lYFRYX921sjPkhzGS0FdtSyZzLCVGKFUz1o?purpose=inline)
+
+[Second nine opens to complete redesign at Sandy Golf Links](https://images.openai.com/static-rsc-4/fKin9nONNIpsouCvEKdc8KwVhkygzNSoMyPYI6uMamIM-bGq3a6jd7eVbt9BzEFPIMB2NeKkIcELji_-Th2WvUXkMCy4EKJcuqKbJQwgEtUr2eVTyur1VelirdaO2eupYwKqowlgkK2E-85D-UZdbey7Y81BxddVGEleVR0KjXE?purpose=inline)
+
+[Así es hoyo a hoyo el Marco Simone, el campo de la Ryder Cup 2023 | Relevo](https://images.openai.com/static-rsc-4/HqZIAD-NdrByJ3opcwW72sPk44p_5aD1yB6nFsdIMZFo2JmCbr2vKrjjYEAIntpOhIVmtmEXCSbNDvw1iYbAWkiItrBQaZzErIBWIJv6pfrZpKlgFDCptZLiFEcRODek6KoAB8OUOgvMS3N3GXoAS7natoCQgp4pLszEJcaKm34?purpose=inline)
+
+[Heron Lakes (Great Blue) | United States | Top 100 Golf Courses](https://images.openai.com/static-rsc-4/2gp6mctMrWZMX6bkKvCjKs_PxI3tPvv11lb_9Cz0Di4F6DCywN4LTWNlJMlxd7RGDqD_c4JD6yfECzaZNM-8anR-EQRAC_DDtqO_9BuaWMyPkxvl6caLH8X2oSQtMofH72iYghXw5zug8WmTWFak72DsOGN9ZO3yUwzx7lXQHwE?purpose=inline)
+
+[Royal Birkdale Golf Club: Course Review, Green Fees, Tee Times and Key Info | Golf Monthly](https://images.openai.com/static-rsc-4/oouVd7WPClwwbka_vDzVOHNCTcL6scobFSbVKf89pwLbGQEQkkWb8_VN4-FlT6MVBQcCIBfW6OGjyL6NFk1Hh0WrnuVl47wRxkfxMvL8ZIYdn9QXNRQghV276CmGuXHUfu8ZEb_o62NX_xp95x_-thJT2Ea5JyJ2aa5sDYaOMr8?purpose=inline)
+
+[The Postage Stamp | The 152nd Open | Royal Troon](https://images.openai.com/static-rsc-4/CgVTmYqtD2yOsZKm37KKHSkXo4ygBmn6O94JmbzlnghwoFmYh6LmmZJqCozFwEa9oMwu-jEQehwFVlX3AWYUgL1kNM3xLJk1q3kYXYQaZCHEgNrEpqMun6sYptTlcTplc1325Rx7-J_Y2S7nIj0uXUwLiVZaJ5vTcCtKqLQL_Dg?purpose=inline)
+
+[Community | Illinois International Port District](https://images.openai.com/static-rsc-4/sjSSC0G49FebHDxlFaLw51i_IFgRX6iJx2IZ_Flwz06pSNMIfgsPcI1nrTUr4F05BalBUitAJ4cBzaTSgYN5Y3szCs_bciDFDsQrlrhZaSnDdetZ10pgMX4CNRXSeeIeWKb9eTjaBEhjeROdqZQMinpew2jki9_ontiZ32aqDsI?purpose=inline)
+
+Include the following bunker styles:
+
+- Traditional links bunkers.
+- Pot bunkers.
+- Deep greenside bunkers.
+- Fairway bunkers.
+- Waste bunkers.
+- Sandbelt-style bunkers.
+- Heathland bunkers.
+- Naturalistic bunkers.
+- Irregular-shaped bunkers.
+- Strategic cross bunkers.
+
+Allow users to configure:
+
+- Bunker shape.
+- Length.
+- Width.
+- Depth concept.
+- Position.
+- Orientation.
+- Lip characteristics.
+- Sand appearance.
+- Number of bunkers per hole.
+
+Include planning tools for spline-based and shape-based bunkers.
+
+Provide a bunker placement recommendation system that considers the intended landing area, approach angle and risk/reward strategy.
+
+## 10.2 Green complex designer
+
+[USGAが決めているカップ位置の傾斜はMAX1.7度！ 3.4度を超えるとアンフェアになる　では一般営業のコースの場合は？ - ゴルフ総合サイト ALBA Net](https://images.openai.com/static-rsc-4/5b1TIAdUOG3pfefEtX22QG5M9aoru0-00i90iKabeOHDdAP-f6FdtWAEEkg7n01n74-48NoW5WrRJVd1keKDuPd5EICkxxny-0b1JzVztgsUa8OBlCwQ2Yhig19Vo0M8bSep6WAOwkrEMJLv9AWbZqMSkTNk_T1DxpEWJFhtBnA?purpose=inline)
+
+[The Donald Ross Design - Brae Burn Country Club MA](https://images.openai.com/static-rsc-4/LrnGIQ6buMmQbtnQMrbRh6DpQ1Ij5Q5lldTfhwMVFRt963AGWpXE88z9WrQvxa56hlznTg11z9_rNeFb9LZqNN8fCE6WWzGrY54amVKwKuTiTLEJeAHVclrDs3FPHuuCXQWeFmjmLjtG7pQRMKdGMXOwXttDo5TjU1gfBQ2SSEk?purpose=inline)
+
+[Course Management for Better Putting: Approaches to Different Greens  – PrimePutt](https://images.openai.com/static-rsc-4/Cs3fKL4H7-fJ2mCeezTbluPFbdhMC-VEm5iYrVoW3vLzX9yFzAo9N5EPPdVZtfAQeaFewFRrr9a_OOPeE1QWsZhFsOyFE11gx1Nkn1tu2gSoemounVqyOosrTk1efv8m8h4FPSlMk4dLaSoxpQLz0GmeijoRxZkJXaXi-uoZ4-E?purpose=inline)
+
+[A 3rd Option to Consider — PJKoenig Golf Photography](https://images.openai.com/static-rsc-4/9L2MHuQjtRILCOA_wdrtTMDxlyNz_Pbryg-lX9WhnPkF7o0BgZtSRFqyqmGARoTRcBLeGmoo3J1KfZBBnQ5VTHH1f4fFztKJQUTJiJyiioYRjx8OSYVV0BmccE16UoTdYpYaB2tOgCQlcua7RXlROkAmPE6wdIA0rRvvLBMKoBc?purpose=inline)
+
+[Dunstable Downs Golf Club | United Kingdom | Top 100 Golf Courses](https://images.openai.com/static-rsc-4/wL7q-Nr8BF-aKcPBjil-1c8ouIO5_tJHo6aKN5ssuHVMYyYvF6xSR0tgI1_9VGMHYswzE7IjtpHt1_QnFUcMPFc75aidG8clWePEEbW1o-tq6s25XVM4jPb3-nczYfaoUigqBy-XngKRG78Mr8wE4yUc6l5QrmUzawoRHMWmXO8?purpose=inline)
+
+[OC US Top 100 2023](https://images.openai.com/static-rsc-4/mQkVGGJJ41vvSH4DNePvcGwEqcT9us40JOUqn8qCtbediBtV2ia3BhT9Ir69bAiInJLuuW45Ic1HLrdy02tOhlFx-e2brlGdPTEBlf2lES7G3J9mBzQeQDaYRANfLHz34RaZxTpYMujfusas6lkJRWXa8DJdjUdCc9GB8_lPAKo?purpose=inline)
+
+[Hole-By-Hole - Indiana University - Golf Site](https://images.openai.com/static-rsc-4/V729E81X-Wx8d9dpV92LdUveKVJ2gwaupEtz22mtVzPvyCcVY2HDDRnsPn79UwED39MRLLAhx-4oml4Pq5HDZRImQBRxK0j_ZktFrz7njDNeRBvwix1ACuD5n419djBkZHn5IrtAalq69e6IVUhXt0_wKPEvuexJ8ozGTCddgIM?purpose=inline)
+
+[Future Venues | PGA Championship](https://images.openai.com/static-rsc-4/XUK83EOfvBVJMYyy1pnZrrbpojc9QDTui514tbAQEeGXQszIO1JysPXm58HKuz_BSI1N9YCes2iCPiWVtqKZU1e8l-5vds91ujwkey1xevqJmfwehNVTHAIRn7cD1IOJtjINonFlGpq8ANLQ9gfT3heoRG08UDJv2VKNrD7ZRiM?purpose=inline)
+
+[【観戦ガイド】GOLF5レディス2025 ご招待券がもらえる！注目選手と会場の魅力も紹介 | ゴルフ5 港北みなも店 | ゴルフ5 / GOLF5 公式ショップブログ](https://images.openai.com/static-rsc-4/1VSQNzhP9fnEYD_J6J7VsjF48NA7I7BaLnmJqbl2NUyC7peHxWC9TszJZ25NbXN1rCtHVo_ln673pG3FOwHIhQ00ZpiBCEGYCVX5BjXiaeb4wQgPYx4sk-sNBKDEjwi7KTnMqc2TD9igt9Sbc3SEmsjUslLc8yuHJppxzOWMaXE?purpose=inline)
+
+[Remote working for improved sustainability](https://images.openai.com/static-rsc-4/WvHvkI10PMutYRNVofMikpUG061A6pj_gGD6LnnjcrwuUJCMvVR9eOWtxf_en4EFwRp8UpJ9czyfmbl8JvEx9FRNH5E8trXdhtAF2WDCGdSQwCA-huVUj6PF6ZLM6zgjlHbDkgM_gqTa2SwuA7YNxotAQB8blvf6tWqTcXEJGs0?purpose=inline)
+
+[Ingestre Park Golf Club, Stafford - MJ Abbott](https://images.openai.com/static-rsc-4/hyhCjlKFS6369bytP3Vf6YTTxNl-FZEufWguGb3t8LXLdihnFHoBLMCzkgi1zo_TWI8UFfCdl460VqxBkhIqv6XAWvmIFOITBIsQmHYk3PU5mcvn1jnTn1DT4EYjY98HRj31VkX24Fm1ieTknnMFgRuJHqM3bjKxxswzDH2q7ow?purpose=inline)
+
+[Circolo Golf Torino - La Mandria  - Italia My Golf Premium - Schweizer Reiseveranstalter spezialisiert auf Golfreisen nach Italien](https://images.openai.com/static-rsc-4/VcuktqUn_eaR1Oa0a6NJt5ln6g-0O-l9tTW1nqG_12SbSelsqoMpnACmdezhraQ1ruG9ND97mBIQsuDnq0-3bAIkBH3mT-YYtrqnhnknW1N_B7NMsCNkUwB2gxi-64SKgJuLCwNyitd2kR0LTqkhpEQdb5mM0qYdMdhNFiS1Z9k?purpose=inline)
+
+[하이원CC - 마운틴 6번홀 PAR3 : 클립영상 : SBS골프](https://images.openai.com/static-rsc-4/PU6xjZDMbKGYR6CoTWd86XjRjQ8OlkkxoWgJrlPChIbCIPFegV6hBC0eBRbUdsNUQo6rgfcWyRsHbd5SeiontG2Efr-7ADVTOY0pX8umBw72JgSrDF4o2LqM9xSf5etAd9gRhAOI1QNBOwCTu29fVB40sR3t2nr-B7r6HOj2XJY?purpose=inline)
+
+[Town & Country Club approves Jeff Mingay renovation...](https://images.openai.com/static-rsc-4/v3L5C7zAiB_5GO6SS19RPqRfaJG2HzK3kR7q3XzhtbtSwJsWDTLJ4fVf4Ioteaq7y7_0iQyefPo8bdMdaekA2MA-Jy6cEnjI6dwgLTXPseelr81MXNSAGKQ472ACuelQ3dOEovWypm_OTvZXBAS59eCfYG5fQFwMCm4tcDTAEa4?purpose=inline)
+
+[Move over TPC Sawgrass. Here are golf’s best island greens | Golf Courses | Golf Digest](https://images.openai.com/static-rsc-4/Wpgzd88czSUq1vSICV-DgKxMLs7XTrFbnKZrEeX07iLwa66KulkFuJfIZCE0ihsL-pCgWK7dSjxFds1dNn5zdi-APIRcSkpE_mFBqXv2Eaxha6n1dyey9Y_VvZU4TiTbBhzGdyKd_xvYZYQznVyt3-AnfBqJUzbyZULIvhs4ZZA?purpose=inline)
+
+[ＰＧＭマリアゴルフリンクス(旧きみさらずゴルフリンクス) | 千葉県木更津 | 【アルバ公式】ゴルフ場予約ALBA Net(アルバ)](https://images.openai.com/static-rsc-4/_zcfXzjqHWhSqhYo-nM6zkxuzm_iQfYl_MzwemcWInut3VM6oKcw_dKal_-7-LGPOapPHz9qG2oi3z_byjSpXuWQ9vW4fAaCnDfiNRTjm4QsrCmLPdIoe8aeCRjFKENIsFsPipmq50xyRJATVaAgwqkJc3prhD-F2EsxwjK1zuU?purpose=inline)
+
+Allow users to design:
+
+- Traditional greens.
+- Raised greens.
+- Sunken greens.
+- Punchbowl greens.
+- Plateau greens.
+- Multi-tier greens.
+- Sloping greens.
+- Contoured greens.
+- Small target greens.
+- Large championship greens.
+
+Green planning should include:
+
+- Green perimeter.
+- Surface dimensions.
+- Elevation.
+- Contour complexity.
+- Slope direction.
+- Pin positions.
+- Runoff areas.
+- Surrounding bunkers.
+- Approach transitions.
+
+Include a visual green contour editor.
+
+## 10.3 Water hazard designer
+
+Include:
+
+- Lakes.
+- Streams.
+- Rivers.
+- Creeks.
+- Waterfalls.
+- Wetlands.
+- Marshes.
+- Coastal water.
+- Island water features.
+
+Provide tools for positioning water hazards and planning their relationship to tees, fairways and greens.
+
+## 10.4 Vegetation and landscape designer
+
+[The Els Club Teluk Datai Golf Experience: Tee Off in Paradise](https://images.openai.com/static-rsc-4/NbEMT6aZXirKIt8x5KJuIfcoZpoQUIlteBdDHbJoa6FUTwRo-2MpPC50wk6DqvfgvV07BLoUK_FtnAX-T-rijU4zWyLObYe5sq8-JLsAOZ0Zos_DPfP2L556p7xWGLvl_FuSQVnd_tEta2cmv1xbVyvHKE5fXxdx7lVO6COyl_c?purpose=inline)
+
+[Remedy Oak Course Review | Golf Monthly](https://images.openai.com/static-rsc-4/LdMT-puSFDhh6jSyyzftURfIpvLmGKt8gAShJ-CeEHP6dzkWSt1O30eifN1Yq8ewFaDgQSxOJh1hS48tVHlR-1CO5BW8dTYhyyJkWaNn52LhkS_9x9G137ouSObc_TQfAeEaF6V_0_nrXPzNog5BuEyVa4A92u_Gb2Ay7Ze4f0U?purpose=inline)
+
+[Machrihanish Dunes](https://images.openai.com/static-rsc-4/nfX9cr1YVCvQl9G04ECHYPKZvbqCDpCcaytZVotH_TAWW7PDbVXHKMWDE3ETtMdJd6_HBJLBYB3HKtfIcoB545HLHf7BCS0mIyKI-xo3XW00VRMqsItZkxsn8QrqzPA0c1Wxqw6S5kV4i9_xBmCuPt5XsjHuvNMTHpOJmv29Dpg?purpose=inline)
+
+[Ashridge Golf Club | United Kingdom | Top 100 Golf Courses](https://images.openai.com/static-rsc-4/YMSitG-PgRFt7cKF6m18UVz7N8hzpusnkJKTHCBYEFvWxmfXjQkB2Qpi5pnhVpItVOSEzulE0DjGwzpmv6dZRIHdGt0K8VR53XPXr9RdZRSOzkt4fyq9vnzAs4iOX9enOVISekK58cLBpMm0U1-a8Qvu9wioCABFL9paFxVfEnQ?purpose=inline)
+
+[Who Owns St Andrews Golf Course? The Royal and Ancient Society Explained](https://images.openai.com/static-rsc-4/y1Snqj8tkzWYWk-ih6nkCvP6uTZwcm-Cc99ETazSGnPWQuTN1hZp5h11WextPCPk0SyFJN2Ujc8_cWdXgWVU7ablWH2mY-7QPZBc-oi22bVsUPb5yTZRtTSUrp5IzGE8RhldaXJdAph4xYrgG61LyrTUm-B3KojTPtJkO_ttt9k?purpose=inline)
+
+[Trip to Bukit Tinggi Malaysia - Berjaya Hills: Colmar Tropicale - Just An Ordinary Girl](https://images.openai.com/static-rsc-4/ix4_1LofTxdBe3amsREEqBRmBC67J_UsYo1SmARJoSzAXeGuyTWfs7nkNCBsbvZCkMVAE_X-IqeZVqftNivfinADpRVC1Fx05-Lx44hKX1hUo5VlDrxxtkcglynQHHdtQxaMkBVVf5fp3GYzHeoaZkxnotGjvTQfVdRSsh4evxo?purpose=inline)
+
+[Troon: Selected to manage Starr Pass Golf Club in Tucson, Arizona | The First Call](https://images.openai.com/static-rsc-4/bcY4YpRIUPGJ_C5sIPY25Ph2RNh-iUo6sAR8eozsDfNfdv9stWiDaDY2oD4JxrLa2gT2QuvqS5WBKBGYa2p93R4w6MIg5al6Hl_stv9ZeWKq8B3keQFKYPCsrgb14tOV5L8xbRkuOde6J0lOoETH9Jm3NWXHnbHiKYZyXphRZ6M?purpose=inline)
+
+[Naturalized Grass Stands for Golf Courses](https://images.openai.com/static-rsc-4/mraSdueCdpSLP20ysG0wxAhvza0z4NVEro9Nro6_JHbVTaVQtN8Hk5i73wOHDNVIJekpyUGpf9ZT96aurzuZwCAUM3R89mC98aPpVCgLSAYnxoK-UG1oajz54g-tPf2hKsLwJ7wObUYLBfsHquVXx8qWjrBp_xw_T3FkC4EVGZ4?purpose=inline)
+
+[Close House golf course near West Wood © Andrew Curtis cc-by-sa/2.0 :: Geograph Britain and Ireland](https://images.openai.com/static-rsc-4/OEWZ_lm50aB_PuHvc6HWAEYWwLEm_i5pOGPelP3KUN8LY4KZKiUqioMvU2zixsLnC-gfF8GD5acuW71l5Em8Z6dFghfmG7AxiyTjBVW-7LOPlhcl6KDTUDedz5V6bSfXe8JspBCJS7LE4HRb3W7OdZ3umhXBeZ94YxbOdXU6nSI?purpose=inline)
+
+[Golfplatz in Phuket: Red Mountain Golf | golfurlaub.com](https://images.openai.com/static-rsc-4/9jfSgGwEMiNywMvYp98-yoH8wi0Uo3LMGFBNK7F1IA677u-qO2qYVtiu1b_Hj88kYeJJEVrtyRwEHJoDPNfIWB3d2-n4vQ8xF4pwTMBEsgeOVR2Fg3ucjLj_a2Hk1od7ZTKdFH7ep1LSHNgPHbi9v9Bigq-vemNDpXUUf5cTWvM?purpose=inline)
+
+[The Best Golf Courses in Woking, Surrey, United Kingdom (2026)](https://images.openai.com/static-rsc-4/TepHSjJ8Fs5VS1_5ocCcfQr6HDe-Qm8HT_0q9HlPB0zy4NZqbLhB5on4_DNeygzLBJku0AswHjXzGlp1mvIjeyCxhyVELIEqNYBmtLsgSq-rsRQ0r4NE80mkY3x1OtSpKgxV5o4B9LPyou3C01AnyVak87TKMqHms04_r8G1IG8?purpose=inline)
+
+[Murcar Links Golf Club | United Kingdom | Top 100 Golf Courses](https://images.openai.com/static-rsc-4/Q7qh7jwzVLORXije5Q-C7TPWitE7PJHxRIO05NMwKoggykH9I5itfr_F6t5X45EF2EW5fbg8T7RgXcOK280YDB149iGFm8_YoL-9Ji6nOE-CJ-1RInH4BYjK60A-LcGxsMyzrcVGlauRNEvTThcqcM5fxIlAxFqq-6e0Q9_aGzk?purpose=inline)
+
+[Bepflanzung und Aufforstung - GolfCity München](https://images.openai.com/static-rsc-4/w9Udj81S8Z4-2FpH3Odzhyhr2Dd8diSVFIYT9f6kvyeui2SVSsTQ5QwgzKp_ysEPO2IFXBW56F7Zbud_j1Ufq3i89L86hPHtfyIa-YBHeOGVQopZ-9cmktGn6zFsOztgRAiSRzXR5U4V55zoZxJvsqEgsBYgzOwVj6chidHixas?purpose=inline)
+
+[Royal Hawaiian Golf Club | USA | Top 100 Golf Courses](https://images.openai.com/static-rsc-4/hPX0Di38wXRjqY2yaCUQtQ3yy6BXMhT_HtpzhP5ExjpQt0_LGEHGuIEwcH6SlS9GQ5dqQlQseraDnuExEGMjrxuR5-gCYG7xiUSRPyIwOwb6mgjxDfOKBEIuUjhNWAQsV2Ejcj8ZOZkKEWXEMyoETqeMQiOphaz_iFfozosq1sM?purpose=inline)
+
+Include a vegetation planning library:
+
+- Mature trees.
+- Woodland.
+- Palm trees.
+- Pine trees.
+- Deciduous trees.
+- Shrubs.
+- Hedges.
+- Long grasses.
+- Fescue.
+- Wildflowers.
+- Desert vegetation.
+- Tropical vegetation.
+- Natural ground cover.
+- Rocks and boulders.
+
+Allow users to create vegetation zones.
+
+Provide recommended planting density and spacing.
+
+The application should also help users manage the in-game object budget by prioritising important visual elements and making efficient use of automated vegetation where appropriate.
+
+## 10.5 Additional course objects
+
+Provide planning categories for:
+
+- Clubhouses.
+- Bridges.
+- Cart paths.
+- Walking paths.
+- Fences.
+- Walls.
+- Benches.
+- Ball washers.
+- Signage.
+- Tee markers.
+- Directional signs.
+- Spectator areas.
+- Grandstands.
+- Course maintenance buildings.
+- Decorative structures.
+
+Maintain a library of reference images and notes for each object.
+
+# 11. AI Golf Course Architect
+
+Intelligent design assistant
+
+Create an AI assistant that acts as an experienced golf course architect and PGA TOUR 2K25 Course Designer specialist.
+
+It should help users make architectural decisions throughout the design process.
+
+## 11.1 Architectural recommendations
+
+The AI should understand:
+
+- Golf course architecture.
+- Strategic golf design.
+- Traditional golf layouts.
+- Championship course design.
+- Links architecture.
+- Parkland architecture.
+- Desert architecture.
+- Mountain courses.
+- Green complexes.
+- Bunker placement.
+- Fairway shaping.
+- Terrain sculpting.
+- Golf course landscaping.
+
+## 11.2 Design analysis
+
+Allow users to submit a completed hole or course plan for AI analysis.
+
+The AI should evaluate:
+
+| Area           | Analysis                               |
+| -------------- | -------------------------------------- |
+| Routing        | Flow and overall hole arrangement      |
+| Fairways       | Width, shape and landing opportunities |
+| Greens         | Size, shape and strategic positioning  |
+| Bunkers        | Placement and strategic purpose        |
+| Hazards        | Risk and reward                        |
+| Terrain        | Natural appearance and playability     |
+| Vegetation     | Density and visual balance             |
+| Difficulty     | Overall challenge                      |
+| Variety        | Differences between holes              |
+| Visual quality | Landscape and presentation             |
+
+Provide a score out of 100 for each design category.
+
+These scores should be clearly described as AI design assessments, not official game ratings.
+
+## 11.3 AI design improvement
+
+Users should be able to ask questions such as:
+
+- How can I make this hole more challenging?
+- Where should I position the bunkers?
+- Is this green too difficult?
+- How can I make the fairway look more natural?
+- What can I do to improve the visual appearance?
+- How can I make this course feel like a championship venue?
+- Which 2K25 theme best suits this landscape?
+
+All recommendations should include practical explanations and visual references where appropriate.
+
+# 12. PGA TOUR 2K25 Design Execution Assistant
+
+This section is particularly important because it bridges the gap between the external planning application and the actual in-game Course Designer.
+
+[Course Designer Guide: PGA Tour 2K25](https://images.openai.com/static-rsc-4/R7BZaHhFxjmiNBpYXrNMl33IvGpvBIIyoMLFFfboJbo3Q8GhNib1NtYwvojW-P-CWWoM394xImM2xqizZLe6SvJ5Jv57vnYcbFwHpRCSPkWT7BQCtYa1or286fGXj1gxp15PUD4o7DtM2T1TQxrUfRXYr8e7jvpcxOLAOLfkr4Y?purpose=inline)
+
+[Video-game course design? It's part of Ryan McCormick's process - PGA TOUR](https://images.openai.com/static-rsc-4/wKzg7yaTZnhAOaiJWq7nF-uGYww_pFHXl_cB3mqO5qq1HgtkIlEYTUhZD1TeOZKD4x6XLAmzRJBdUyg6vL5ThlRoWYV7Zc5-bQWg8ZJZj6sDg3SUHsSt9qNI76mqfvEeot5iBGS-XmjFViI8c5K_mBAqNbcxrw0vkB98xWEVqfw?purpose=inline)
+
+[PGA 2K23 Refuge Tour - Info Post #9562 - S24 Begins 11/25 - Page 366 - The Portico - No Laying Up](https://images.openai.com/static-rsc-4/8T8LlIlEovY6d9qPPBf8ZxZ1ehANvwIDGj2faDNP6ZILuqPifFdCguGAQtyR8o78XBH78dfiQi0PDjNtFOtHaRcxvEWpiJnyMB_pFmcXhQuI96gNT9Iw44Kw9JNgR-I3RYTZqnXsdVHGkEy8urQI-P4W3pqDozAzXcNQHci16vg?purpose=inline)
+
+[Up Your Game | PGA TOUR 2K23](https://images.openai.com/static-rsc-4/7Z83EC0rmFykkZDxTvBahRt-NDRJaW6pOfhJ3JSHVt6s6soclpUH8v5uroi0YBCKuSE1I2FFOhNPlpH3wa5tIUqswkIkAIhSsXwRxCJo7aDgZ9RyiwO5JWQ5lu58gAONFQyGyc6PTi9NddQ9TM_JQHvBrlsZ6sfCCvD4g8m6UoU?purpose=inline)
+
+[Build your own GOLF COURSE on PGA Tour 2K21 | Golfmagic](https://images.openai.com/static-rsc-4/r-qUmjjt5m1CJKOFXHaV1j_xj4ZJfq7qdu3tdu24mwVwdfA6YkIMYFwhAPeV-TZSV9Nth1t1-_LpzirLF8a8IRAoGKL_SgVEjv9XKpcMQiZ-1wqKyIcDJssVIGDjC21qnMTbBoolalhvRgXJdhHfpirMvnH4N1zj0v_gFd6RTrU?purpose=inline)
+
+[PGA TOUR 2K25 Features | Majors - MyPLAYER - Seasons - MP](https://images.openai.com/static-rsc-4/WzlKBYzVUHbQ9QFvep3gZX-rlxxM7-XSD0h0Xa_XtGRzK6Rv6yE0LTQ12uLK7VoYF0iidzCHhE_x9QMlWoF5YWXNZm3esPckPpfUuRmpIUxRnKtujv1lg43Yc2PCBdBSyQ7fIoR1X0cWUwKkTRFb3IBD-ET-hw4pZlRCzVEh08Q?purpose=inline)
+
+[PGA Tour 2K25 review: Above par | Shacknews](https://images.openai.com/static-rsc-4/BgHH2tJqVnDo4RYq0UVWVp90a5bLMd79SOKUu7fv-rWy5VOjQOtF1E9yxsnYHZd1GSwtSowDOC8hurkr2x4EthvMwKL_wXyRv8qEpBfRmYMx0ic3NVJAkjZvJQ3GuX0_pq2-rrwvrmL6IAaUwerFGUYs0iMxASz444S_eR-lHf8?purpose=inline)
+
+[Verbesserungen beim Kurs-Editor in PGA TOUR 2K23 enthüllt - TestingBuddies](https://images.openai.com/static-rsc-4/WSJHe2lkrzGn4OtuocbycKUXktRKNB-VTrOen94UCCZxcZFIM_P0VBfG8G6n3orF4iY5qCv8amvWm1yg_KD32ZJIql3eFiAoyi5x8n3jgRMEu_CnWnMmQdOiqKX3eqclsdi9ebaoqauedy-L_0_avVK-Gf8wgxTbxUCvIK46eJ0?purpose=inline)
+
+[Lidar Design Tips by mthunt -  		 		Golf Simulator Forum](https://images.openai.com/static-rsc-4/zhCoBti_thrrBkros9ytMmo8PC69Meu6XnGUxYaOwvGPMarGjbxklZNJMCNDrMHwKboIzgFQ3PLMTBgEXIEJ5F-WiUdcSNLvuhhjMdhpA3bIB8TtpbBNaDd0hYnSrWmIzh-4lT-wfsCflekjrelv-8XRG2CXuhF6Gwv51iPxLss?purpose=inline)
+
+## 12.1 Construction sequence generator
+
+For every hole, automatically generate a recommended sequence for building it inside PGA TOUR 2K25.
+
+Use this general order:
+
+1. Establish the plot and environment.
+2. Prepare or import terrain.
+3. Confirm terrain elevations.
+4. Establish the hole routing.
+5. Sculpt major landforms.
+6. Position tee boxes.
+7. Shape fairways.
+8. Construct approach areas.
+9. Construct green complexes.
+10. Create bunkers.
+11. Add water hazards.
+12. Paint and refine terrain surfaces.
+13. Add rough and surrounding landscaping.
+14. Place vegetation.
+15. Add decorative objects.
+16. Configure tee and pin positions.
+17. Playtest the hole.
+18. Refine and finalise.
+
+The sequence should be configurable because different design approaches may require different construction orders.
+
+## 12.2 Course Designer settings reference
+
+Maintain an editable reference database of actual 2K25 settings.
+
+Include:
+
+- Environment theme.
+- Backdrop.
+- Terrain settings.
+- Automated vegetation.
+- Water level.
+- Natural hills.
+- Fairway settings.
+- Rough settings.
+- Green settings.
+- Bunker settings.
+- Object placement.
+- Course presentation settings.
+
+Include a special option called Blank Plot Setup.
+
+This should guide users through creating a clean plot without automatically generated holes, fairways, greens and other surfaces when building entirely from scratch.
+
+Based on established community tutorials, this setup should explain the use of zero-hole layouts and zeroed automatic surface settings before beginning manual construction. The precise settings should be checked against the current game version.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://lilys.ai\&sz=32)
+
+Episode 1: Creating Your Plot
+
+
+
+## 12.3 Step-by-step construction cards
+
+For each feature, generate an execution card.
+
+Example:
+
+Hole 7 – Green Complex
+
+Construction guide
+
+[The South Course at Arcadia Bluffs | Arcadia, Michigan, USA — Fry/Straka Global Golf Course Design](https://images.openai.com/static-rsc-4/ozljeHnGiv8fXAphaNsyx-LD5Y2KcTONOX6P5fpch9Knlw-yGe6iBk_frmwOX1kFyU_sR00uyW9k6s82-8r4r_2uExBK1SLQ3nJNV5fkysQ0SZVras02W19YTzSQBFS3RLMJOFXXrpvt1Xxf45pV0SSw403Q7KHQrVjW7e35_Ao?purpose=inline)
+
+[frystraka.com](https://www.frystraka.com/course-gallery/arcadia-bluffs-south?utm_source=chatgpt.com)
+
+Construction instructions
+
+1. Establish the green footprint.
+2. Sculpt the elevated putting surface.
+3. Create the surrounding approach contours.
+4. Add the greenside bunkers.
+5. Refine the runoff areas.
+6. Apply suitable terrain painting.
+7. Add surrounding vegetation.
+8. Playtest different pin locations.
+
+Completion tracking
+
+- Green footprint
+- Terrain sculpting
+- Bunkers
+- Surface painting
+- Landscaping
+- Playtesting
+
+Allow users to tick off completed construction steps.
+
+## 12.4 Construction progress tracking
+
+Track completion at:
+
+- Whole-course level.
+- Individual hole level.
+- Individual feature level.
+- Terrain preparation level.
+- Landscaping level.
+
+Automatically update project completion percentages.
+
+# 13. Playtesting and Course Quality Assurance
+
+The application should include a dedicated playtesting analysis module.
+
+Although actual ball physics and in-game performance must be tested inside PGA TOUR 2K25, the external application should help users organise and evaluate their results.
+
+## 13.1 Playtesting records
+
+Allow users to record:
+
+- Hole number.
+- Tee used.
+- Pin position.
+- Carry distance requirements.
+- Landing area width.
+- Fairway accessibility.
+- Green approach difficulty.
+- Bunker interference.
+- Water hazard interference.
+- Unintended ball landing areas.
+- Visual issues.
+- Performance observations.
+
+## 13.2 Design issues register
+
+Create an issue tracking system with categories:
+
+- Terrain issue.
+- Visual issue.
+- Gameplay issue.
+- Bunker issue.
+- Green issue.
+- Vegetation issue.
+- Routing issue.
+- Object placement issue.
+
+Allow screenshots and notes to be attached to individual issues.
+
+## 13.3 Final course assessment
+
+Generate a course design report covering:
+
+- Routing quality.
+- Hole variety.
+- Architectural consistency.
+- Visual presentation.
+- Strategic interest.
+- Difficulty balance.
+- Terrain quality.
+- Environmental quality.
+- Outstanding construction tasks.
+
+# 14. Project Library and Version Control
+
+Every course should have its own self-contained project workspace.
+
+Store:
+
+- Course description.
+- AI-generated images.
+- Environment concepts.
+- Reference photographs.
+- Satellite maps.
+- LiDAR source files.
+- Processed heightmaps.
+- Terrain masks.
+- OSM data.
+- Course routing layouts.
+- Hole designs.
+- Bunker plans.
+- Green designs.
+- Landscaping plans.
+- Execution instructions.
+- Screenshots.
+- Playtesting reports.
+- Exported files.
+
+## 14.1 Version control
+
+Allow users to save design milestones.
+
+Example:
+
+- Version 1 – Initial concept.
+- Version 2 – Terrain imported.
+- Version 3 – Routing completed.
+- Version 4 – First nine holes.
+- Version 5 – Full course construction.
+- Version 6 – Final landscaping.
+- Version 7 – Final playtested course.
+
+Provide automatic backups and the ability to restore previous versions.
+
+# 15. Export Centre
+
+Provide a dedicated export area for turning the planning work into usable design resources.
+
+## 15.1 Export formats
+
+| Export  | Purpose                                    |
+| ------- | ------------------------------------------ |
+| PNG     | Course layouts and heightmap images        |
+| TIFF    | Terrain and elevation imagery              |
+| GeoTIFF | Georeferenced elevation data               |
+| CSV     | Hole coordinates and design information    |
+| GeoJSON | Course features and geographic layouts     |
+| PDF     | Course masterplans and construction guides |
+| JPG     | Concept images and reference material      |
+| JSON    | Project and design data                    |
+| LAS/LAZ | Processed LiDAR data where supported       |
+
+## 15.2 PGA TOUR 2K25 preparation
+
+Create a dedicated 2K25 export profile.
+
+It should:
+
+- Prepare compatible terrain data.
+- Check image dimensions and resolution.
+- Check elevation range and scaling.
+- Validate masks.
+- Preserve coordinate information.
+- Organise required files.
+- Generate a step-by-step import guide.
+- Create a backup of the original game course file.
+
+Do not label a generic heightmap image as a directly importable 2K25 course. The application must distinguish between standard image exports, GIS exports and files prepared for a verified community import utility.
+
+## 15.3 Course design documentation
+
+Allow users to export a complete course design pack containing:
+
+1. Course overview.
+2. Environment concept.
+3. Selected 2K25 theme.
+4. Full course routing.
+5. Individual hole plans.
+6. Hole yardages and pars.
+7. Terrain preparation.
+8. Bunker and green plans.
+9. Vegetation plans.
+10. Construction instructions.
+11. Reference imagery.
+12. Playtesting checklist.
+
+# 16. Application User Interface Design
+
+The interface should resemble professional architectural planning software rather than a conventional golf game.
+
+[Contact Card](https://images.openai.com/static-rsc-4/X2FE8WY7Hy2pUHWEBYITDfrZRVctpkALuo7d0KXq6GGUVNa1zbqHhHPEYVoJ_Nvpjfyku574AbOAd9EIR_8_6gTXwmLiIZKDlcoatJFMyGbH11WD7kVGXrQUli3kp_vpkBFEOrUrWQ2hMX8c9to_q-HTLZJsykEo9cmvKZER34M?purpose=inline)
+
+[在 ArcGIS 中显示 terrain 数据集—ArcMap | 文档](https://images.openai.com/static-rsc-4/xrTXyMmBDOnd7DQgJVZCssbYr0gAfeU0C9qnyUjNaLXuctKTw7MRzkJ9fI_7ey-tGPd-uHPZy8GMk7TVGsspgX1MgArKRxzWeJzrCxo1gCwtGxEXY1oHHSG3uP9adOi72eup-f5J6nJG3fqI987PM7s1oeMipm6kHrz7c947JaA?purpose=inline)
+
+[Digital Twin Platform for Smart City Management](https://images.openai.com/static-rsc-4/3ek_ADER8RThuKJed9PZlg49YB0vpYVeiWG4pOygaJEIoUDMchCS5MDQgExkeNHAAU68If3hUSlzkeU1XWJe-uOEFsR8dDiXOnda4bCwF3oirWwKrLWKNI0oCMfmFiT0eSWNQU0cRbhXIWUzUvYvKA2K3Rmqre7AfVCdSo8M1Tc?purpose=inline)
+
+[veryjd - Blog](https://images.openai.com/static-rsc-4/tqg4fO_va-akQQL6GzpRmPROsFXBgJBz662wWan1xRUE3PjSHiglT5bv6K8qPWqXXLTlaQ1Pk_DGQrFE_T3xSeh9gh4YGV8JhfZh7BDtLLNctZU3l4umR0s2q-y7bZ07wz9XJxdh6OnTHW-awBGSlrOqLTEQd1A2a4--SEG3iSA?purpose=inline)
+
+[Εγχειρίδιο Γρήγορης Εκκίνησης GRASS GIS — OSGeo-Live 10.5  Documentation](https://images.openai.com/static-rsc-4/tlHYCKYIgotQf7-cl2V2G6BqP14nRWy_TaF9PjwoGkyjwAOD3njHQgCtYes14w3Xmeb_n2w_z_Pmn7BxCOzMEhxbgbIuX8qN9whuzfYASLrCB3ZNWt4Rqt1v96h0fEzh29yklpevjQWcOwFhWHSxwE3Bb2pYLYqw-kcTSI8_jfg?purpose=inline)
+
+[URBANLY | Shaping the future](https://images.openai.com/static-rsc-4/NEZEhTdSG3CqO_EvI6V4j2iT66pBFuBBIVfu2FarRQnGpWhnJIbNVzv62v8vPn4qKsiLDo7d0m7AaZum3xOsDvGOWdVNRarDa6_c1FPDUS_ILu6UFgpc9cv9Kh3Y3e9gepFcUbyVLBUDnwhdlSXoPGD6z1Pfj-PyPyLLyRJ3l1o?purpose=inline)
+
+[CADOPILAR - 2D/3D CAD Design Faster Draft Sharper](https://images.openai.com/static-rsc-4/NpbXjRLMO3HZjpEcQrI_icnyx2a4n2R4rNUmDOWqQbx8XA2yLbiss4hUCZi1DovX30XxSC0abA5Z2ZU9tIEFK2Zs_mjWonEkUbf4hfq_R-xWfHVNRlD_jLD4Zd2ByKRsc-cJRMCf5A40JXVIqEBoicqV48021atENW5Lv5ZP2VQ?purpose=inline)
+
+[3D viewer | Sinergise](https://images.openai.com/static-rsc-4/8H5eQ1jNTl_JbBkvAzibA2QxfAL6r1cDQVABDnU1u1dOuX7wJJxoEIbjNg_-hrvbbA1v6Jl-5YPDaZKw-D5jWoHtq4IFEYjqtT_OvJJeldyNqZGkOJUZlr-yfjSxfbvMkFf7ANPGIySjflhUSgczuAux6IMI-sXiOcdTBqMWQts?purpose=inline)
+
+[TestFit User Interface](https://images.openai.com/static-rsc-4/iYy-3Gw8AKmh1GZJ6Uv1dsdBnLSCEcY7Zbkg4JfRBS3hNvswwd-DAFBOguext2DixlndUYKwgqHB1ixjuGQCd9-Pt_U25pxiEx_QWGIqLruFMW-GA3LImmleCxyBYkKPwpsbmQjupUlVs67GUTtShBwjW89wM8K4nNPwYTGK5vw?purpose=inline)
+
+[Vitras.ai | The AI System Behind Our Architecture Practice](https://images.openai.com/static-rsc-4/TmqJUvqAhXdY7UdhUkNmO7SkKeRCNcBxr31hxQQT_GczVS0X4oFXbTo3lR9JRXRW5W9N0yCh-aPL265GJRvN8G1Qek-T2wzNxZoFVSFF7BzTNDrAIoZtSxq0xBH_FblTzEm-XYgAlO30QKiPUQV0BXcGbS2FBArGQQ2KlC7jEaM?purpose=inline)
+
+[RhinoLands / Lands Design 6 | Autodesk App Store](https://images.openai.com/static-rsc-4/m9SDjxkBmtwoXmb5YSw6T8-oh9_t9i8PxrF9fUEcDfJe02cxHbB07lL8A-qPUhdYurfAeMMkQ4Rdvxg4N7m7ekn3WfAqTTWVXCD4HzwoqxY0jQmPcx7oV0QJiEpvTAoVqJPpkdIecU4DwZHGZ5dVBb9RlbbYu83Ftm5-Pzy8Oww?purpose=inline)
+
+## 16.1 Main layout
+
+Use a three-panel design workspace.
+
+2K25 DESIGN STUDIO
+
+PROJECT ACTIVE
+
+File · Project · Concept · Terrain · Design · Export · Help
+
+TOOLS
+
+Course routing
+
+Terrain tools
+
+Bunker design
+
+Green design
+
+Vegetation
+
+AI assistant
+
+MAIN DESIGN VIEW
+
+[rasindustrial - Blog](https://images.openai.com/static-rsc-4/PqR2p3iVVGcv48s4pMfqXVF05x1e87e9iPwvCoiFUR1RNsVtu3aDl-LKHSbx8WWArdo4YuCCO1kk5PzdoSZCSsXk-vFqtX0dQcF_C584vmArtuooPZqSfdfl294xG_mnBpjb7yRRGppn2UJjSbs4a4q-QVsV62xUh4VL-5BzE74?purpose=inline)
+
+Interactive 2D / 3D course planning area
+
+PROPERTIES
+
+Selected feature
+
+Dimensions
+
+Elevation
+
+Coordinates
+
+Settings
+
+PROJECT TIMELINE / LAYERS
+
+Terrain · Routing · Fairways · Greens · Bunkers · Water · Vegetation · Objects
+
+## 16.2 Design requirements
+
+- Dark and light interface modes.
+- Resizable panels.
+- Customisable toolbars.
+- Multi-window support.
+- Full-screen design view.
+- Undo and redo.
+- Zoom and pan.
+- Context-sensitive menus.
+- Drag-and-drop functionality.
+- Keyboard shortcuts.
+- Layer visibility controls.
+- Measurement tools.
+- Interactive 2D and 3D views.
+
+Use clear icons and tooltips throughout.
+
+# 17. Recommended Technical Architecture
+
+Build this as a native Windows desktop application.
+
+### Suggested technology stack
+
+| Component            | Recommended technology            |
+| -------------------- | --------------------------------- |
+| Desktop framework    | C# / .NET 10                      |
+| Desktop UI           | WPF or WinUI 3                    |
+| Database             | SQLite                            |
+| 3D terrain rendering | OpenTK or compatible 3D engine    |
+| 2D mapping           | MapLibre or equivalent            |
+| GIS processing       | GDAL / OGR                        |
+| LiDAR processing     | PDAL                              |
+| Elevation processing | GDAL and custom processing tools  |
+| AI integration       | OpenAI API                        |
+| Image generation     | Image generation API              |
+| Mapping              | OpenStreetMap-compatible services |
+| Image editing        | SkiaSharp                         |
+| Project storage      | Local Windows filesystem          |
+
+These are proposed technologies, not mandatory dependencies. Select stable libraries with compatible Windows builds.
+
+## 17.1 Local database
+
+Use SQLite to store:
+
+- Projects.
+- Course information.
+- Hole information.
+- Routing coordinates.
+- Feature locations.
+- Terrain metadata.
+- Design settings.
+- AI prompts.
+- Generated image references.
+- Construction tasks.
+- Playtesting records.
+- Version history.
+
+Large source files, LiDAR datasets and generated imagery should be stored in organised project folders, with their file paths and metadata stored in SQLite.
+
+## 17.2 AI integration
+
+Provide an API configuration screen.
+
+Allow users to:
+
+- Enter their API key.
+- Select the AI model.
+- Configure image generation.
+- Set image resolution.
+- Manage generation history.
+- Review API usage.
+- Configure generation limits.
+
+Store API keys securely using Windows Credential Manager or Windows DPAPI, never directly in source code or the SQLite database.
+
+AI features should fail gracefully when internet access or API services are unavailable.
+
+## 17.3 GIS and LiDAR architecture
+
+Keep GIS and LiDAR processing in separate modules.
+
+Use background processing so large datasets do not freeze the main application.
+
+Include:
+
+- Processing progress indicators.
+- Cancellation.
+- Error logging.
+- Automatic temporary-file cleanup.
+- Memory usage monitoring.
+- Processing history.
+
+Support large LiDAR files through tiled or chunked processing rather than loading entire datasets into memory.
+
+## 17.4 Data backup
+
+All course projects must remain accessible offline.
+
+Include:
+
+- Automatic project backups.
+- Manual backups.
+- Project duplication.
+- ZIP project archives.
+- Restore functionality.
+- Database integrity checks.
+
+Internet connectivity should only be required for external services such as AI generation, map imagery and online geographical data.
+
+# 18. Suggested Database Structure
+
+Create a relational database with the following principal tables.
+
+| Table             | Main information                          |
+| ----------------- | ----------------------------------------- |
+| Projects          | Course project details                    |
+| CourseSettings    | Theme, environment and settings           |
+| CourseThemes      | 2K25 theme reference library              |
+| CourseHoles       | Individual hole information               |
+| HoleRouting       | Hole coordinates and paths                |
+| HoleFeatures      | Bunkers, greens, water and other features |
+| TerrainSources    | Imported terrain datasets                 |
+| TerrainProcessing | Processing jobs and settings              |
+| TerrainMasks      | Terrain mask references                   |
+| MapLayers         | Imported map and GIS information          |
+| ElevationData     | Elevation metadata                        |
+| AIConcepts        | Generated course concepts                 |
+| GeneratedImages   | Image files and prompts                   |
+| FeatureLibrary    | Reusable golf course features             |
+| ConstructionTasks | Building instructions and progress        |
+| PlaytestRecords   | Test results                              |
+| DesignIssues      | Identified problems                       |
+| ProjectVersions   | Version history                           |
+| ExportHistory     | Exported files and reports                |
+
+All tables should have appropriate primary keys, foreign keys, timestamps and project relationships.
+
+# 19. Essential Additional Features
+
+Include the following enhancements to make the application genuinely useful for serious course designers.
+
+### A. Golf course architecture inspiration library
+
+Create a searchable collection of famous golf course architectural examples.
+
+Include:
+
+- Augusta National.
+- St Andrews Old Course.
+- Oakmont.
+- Royal Birkdale.
+- Pebble Beach.
+- Pinehurst No. 2.
+- Whistling Straits.
+- TPC Sawgrass.
+- Royal Portrush.
+- Bandon Dunes.
+
+Store reference images, architectural characteristics and design inspiration.
+
+Allow users to create their own reference collections.
+
+### B. Course design style analyser
+
+Allow users to select an architectural style and have the AI recommend consistent design features.
+
+For example, a traditional links course should consider:
+
+- Natural rolling terrain.
+- Fescue grasses.
+- Irregular bunkers.
+- Firm-looking playing surfaces.
+- Coastal scenery.
+- Strategic rather than purely penal hazards.
+
+### C. Object budget manager
+
+The 2K25 Course Designer has resource constraints.
+
+Create an object usage planning tool that allows users to estimate:
+
+- Placed object count.
+- Vegetation object count.
+- Decorative object count.
+- Estimated memory usage.
+- Estimated file size.
+
+Provide warnings as the project approaches configurable limits.
+
+Do not claim that external estimates exactly reproduce the game's internal meters unless the relevant limits have been verified.
+
+### D. Automatic hole variety checker
+
+Analyse the 18-hole routing and identify excessive repetition.
+
+For example:
+
+- Too many straight par 4s.
+- Too many doglegs in the same direction.
+- Too many similar green complexes.
+- Excessive water hazards.
+- Repeated bunker configurations.
+- Lack of elevation variation.
+
+Recommend architectural changes.
+
+### E. Design comparison
+
+Allow users to compare two versions of a hole or course.
+
+Show:
+
+- Original design.
+- Revised design.
+- Differences in routing.
+- Changes in elevation.
+- Feature additions and removals.
+- AI feedback.
+
+### F. Course design learning centre
+
+Include a built-in tutorial library covering:
+
+- Getting started with 2K25 Course Designer.
+- Creating blank plots.
+- Selecting themes.
+- Terrain sculpting.
+- LiDAR processing.
+- Heightmap preparation.
+- OSM integration.
+- Bunker construction.
+- Green shaping.
+- Vegetation placement.
+- Object management.
+- Course playtesting.
+
+Allow external video tutorials and community guides to be linked to relevant features.
+
+# 20. Development Priorities
+
+The application is ambitious, so build it in stages rather than attempting every feature simultaneously.
+
+## Phase 1 – Core design studio
+
+First release
+
+- Windows desktop framework.
+- Project creation and management.
+- AI Course Concept Studio.
+- Environment image generation.
+- 2K25 Theme Explorer.
+- Interactive course masterplan.
+- Individual hole designer.
+- Design library and local database.
+  ## Phase 2 – Geographic and terrain tools
+- Map and satellite integration.
+- LiDAR file importing.
+- CRS identification.
+- DEM/DTM processing.
+- Heightmap generation.
+- Terrain masking.
+- OSM integration.
+- 3D terrain preview.
+  ## Phase 3 – Advanced golf architecture
+- Terrain sculpting planner.
+- Bunker designer.
+- Green complex designer.
+- Water and vegetation planning.
+- AI golf architect.
+- Hole quality analysis.
+- Course routing analysis.
+  ## Phase 4 – 2K25 execution and export
+- TGC Designer Tools integration.
+- Compatible terrain preparation.
+- Course file backup and validation.
+- Construction instruction generator.
+- Object budget manager.
+- Playtesting management.
+- Final design documentation.
+
+# 21. Mandatory Development Instructions
+
+The development AI or software development team must follow these requirements.
+
+1. Build a fully functional Windows desktop application, not just a visual prototype.
+2. Implement all major navigation sections and their underlying functionality.
+3. Use a local SQLite database for persistent project information.
+4. Ensure users can work on fictional and real-world golf course projects.
+5. Make AI-generated imagery available directly within the project workspace.
+6. Implement genuine LiDAR and GIS processing rather than simulated import screens.
+7. Use real geographical coordinate systems and elevation information.
+8. Make terrain processing compatible with appropriate external community tools.
+9. Never assume undocumented PGA TOUR 2K25 file structures or import capabilities.
+10. Keep the original game files protected through automatic backups and confirmation steps.
+11. Ensure the interface can handle large terrain datasets.
+12. Implement genuine 2D and 3D design functionality.
+13. Provide meaningful error messages and processing reports.
+14. Include sample projects demonstrating the complete workflow.
+15. Build and test each development phase before proceeding to the next.
+
+The finished application should function as a complete golf course architecture and production studio, helping users turn an initial creative idea or real-world golf course into a properly planned, visually detailed and executable PGA TOUR 2K25 Course Designer project.
+
+# 22. Research references and community methodology
+
+The following resources should be used as reference material during development.
+
+[Course Designer Guide: PGA Tour 2K25](https://images.openai.com/static-rsc-4/R7BZaHhFxjmiNBpYXrNMl33IvGpvBIIyoMLFFfboJbo3Q8GhNib1NtYwvojW-P-CWWoM394xImM2xqizZLe6SvJ5Jv57vnYcbFwHpRCSPkWT7BQCtYa1or286fGXj1gxp15PUD4o7DtM2T1TQxrUfRXYr8e7jvpcxOLAOLfkr4Y?purpose=inline)
+
+PGA TOUR 2K25 official PC manual
+
+Official Course Designer functionality, hole creation, objects and playtesting.
+
+[Read official manual](https://assets.2k.com/1a6ngf98576c/7v728w8TX3y23MuvF3T7Ya/fe327cc2bc4494f27103537a92257a95/2KSWIN_PGA2K25_PC_Online_Manual_ENG.pdf?utm_source=chatgpt.com)
+
+Course Design 101 – Crazycanuck1985
+
+Community tutorial series covering plot setup, fairways, bunkers, greens and course construction.
+
+[Course Design 101 – Plot creation](https://lilys.ai/ko/notes/795006?utm_source=chatgpt.com)[Bunker creation tutorial](https://www.youtube.com/watch?v=LZ2i1rhGYuM\&utm_source=chatgpt.com)
+
+b101 design – PGA TOUR 2K25
+
+Bunker settings, different bunker styles and high-resolution terrain.
+
+[Bunkers and high-resolution terrain](https://www.youtube.com/watch?v=YnG-tfbiXtk\&utm_source=chatgpt.com)
+
+TGC Designer Tools
+
+Community terrain processing and LiDAR-related tooling.
+
+[GitHub repository](https://github.com/chadrockey/TGC-Designer-Tools?utm_source=chatgpt.com)[Community releases](https://github.com/Hiblet/TGC-Designer-Tools/releases?utm_source=chatgpt.com)
+
+LiDAR and 2K25 community workflow
+
+Discussion covering LAZ data, OpenStreetMap, heightmaps, masking and experimental 2K25 importing.
+
+[Read community discussion on Reddit](https://www.reddit.com/r/PGA_Tour_2K/comments/1qup8gv/create_lidar_course_in_2k25_possible/?utm_source=chatgpt.com)
+
+The community workflow is particularly important: users have reported successfully preparing terrain using a blank course, LiDAR data, OSM and experimental TGC Designer Tools builds. However, compatibility issues have also been reported, so the application needs a flexible integration layer rather than hard-coding one import procedure.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.reddit.com\&sz=32)
+
+Possible? : r/PGA_Tour_2K+1
+
+
+
+## My additional recommendation
+
+I would make the AI Course Concept Studio, Interactive Masterplan Designer and LiDAR & Terrain Processing Studio the three defining features of this application.
+
+Together, these would address three different problems:
+
+- What do I want my course to look like? AI concepts and environment generation.
+- Where should everything go? Interactive architectural planning.
+- How do I recreate the actual landscape? LiDAR and terrain processing.
+
+One particularly valuable enhancement would be to develop a visual course-to-game construction system: select any feature on the masterplan, such as a green, bunker or fairway, and the application automatically produces a corresponding construction guide, reference image and checklist for recreating that feature in PGA TOUR 2K25.
+
+That would make the software considerably more useful than simply being an AI image generator or a conventional golf course planning tool.

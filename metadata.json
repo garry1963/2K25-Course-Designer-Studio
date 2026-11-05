@@ -1,0 +1,6 @@
+{
+  "name": "PGA TOUR 2K25 Golf Course Designer Studio",
+  "description": "Professional planning, AI concept generation, 3D LiDAR terrain processing, hole routing architect, and execution companion for PGA TOUR 2K25 course creators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
