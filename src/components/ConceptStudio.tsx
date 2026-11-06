@@ -124,16 +124,185 @@ export const ConceptStudio: React.FC<ConceptStudioProps> = ({
   ]);
 
   const [activeConceptIndex, setActiveConceptIndex] = useState(0);
+  const [generationSource, setGenerationSource] = useState<'gemini' | 'heuristics' | null>(null);
+  const [generationError, setGenerationError] = useState<string | null>(null);
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
+    if (!prompt.trim()) {
+      console.warn('[ConceptStudio] Cannot generate concepts: prompt is empty');
+      setGenerationError('Please enter a course description or pick a preset style chip first.');
+      return;
+    }
+
+    console.log('[ConceptStudio] Starting concept generation with prompt:', prompt);
+    console.log('[ConceptStudio] Parameters:', { selectedStyle, selectedDifficulty, holesCount });
+
     setIsGenerating(true);
-    setTimeout(() => {
+    setGenerationError(null);
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000); // 12-second safety timeout
+
+    try {
+      console.log('[ConceptStudio] Sending request to POST /api/concepts/generate...');
+      const response = await fetch('/api/concepts/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
+        body: JSON.stringify({
+          prompt,
+          style: selectedStyle,
+          difficulty: selectedDifficulty,
+          holesCount
+        })
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => '');
+        console.error(`[ConceptStudio] Server returned status ${response.status}:`, errorText);
+        throw new Error(`Server returned HTTP ${response.status}: ${errorText || 'Failed to generate concepts'}`);
+      }
+
+      const data = await response.json();
+      console.log('[ConceptStudio] Received API response:', data);
+
+      if (data.concepts && Array.isArray(data.concepts) && data.concepts.length > 0) {
+        console.log(`[ConceptStudio] Successfully loaded ${data.concepts.length} concepts from source:`, data.source);
+        if (data.warning) {
+          console.warn('[ConceptStudio] Server returned warning alongside concepts:', data.warning);
+        }
+        setConcepts(data.concepts);
+        setActiveConceptIndex(0);
+        setGenerationSource(data.source === 'gemini' ? 'gemini' : 'heuristics');
+      } else {
+        throw new Error('API returned an empty concepts array');
+      }
+    } catch (err: any) {
+      clearTimeout(timeoutId);
+      console.error('[ConceptStudio] Concept generation API error:', err);
+      const isTimeout = err.name === 'AbortError';
+      const errorMsg = isTimeout
+        ? 'Network request timed out. Synthesized concepts using client-side architectural engine.'
+        : `API request noticed an issue (${err.message || 'unknown'}). Generated concepts using architectural engine.`;
+
+      setGenerationError(errorMsg);
+
+      // Client-side intelligent generator fallback to guarantee user ALWAYS gets 3 fresh, customized concepts
+      console.log('[ConceptStudio] Invoking client-side architectural generator fallback...');
+      const clientGenerated = generateClientSideConcepts(prompt, selectedStyle);
+      console.log('[ConceptStudio] Generated fallback concepts:', clientGenerated);
+      setConcepts(clientGenerated);
+      setActiveConceptIndex(0);
+      setGenerationSource('heuristics');
+    } finally {
       setIsGenerating(false);
-      // Shuffle or refine concept
-    }, 1200);
+      console.log('[ConceptStudio] Concept generation cycle completed.');
+    }
   };
 
-  const currentConcept = concepts[activeConceptIndex];
+  // Helper for guaranteed instantaneous generation even if network is offline
+  function generateClientSideConcepts(userPrompt: string, style?: string): GeneratedConceptItem[] {
+    const p = userPrompt.toLowerCase();
+    let themeId = 'boreal';
+    let themeName = 'Boreal';
+
+    if (p.includes('link') || p.includes('coast') || p.includes('ocean') || p.includes('sea') || p.includes('dune') || p.includes('scot')) {
+      themeId = 'links';
+      themeName = 'Links';
+    } else if (p.includes('tropical') || p.includes('island') || p.includes('palm') || p.includes('jungle') || p.includes('rainforest') || p.includes('lagoon')) {
+      themeId = 'tropical';
+      themeName = 'Tropical';
+    } else if (p.includes('desert') || p.includes('canyon') || p.includes('sandstone') || p.includes('cactus') || p.includes('arizona') || p.includes('mesa')) {
+      themeId = 'desert';
+      themeName = 'Desert';
+    } else if (p.includes('mountain') || p.includes('alpine') || p.includes('swiss') || p.includes('peak') || p.includes('cliff') || p.includes('rocky')) {
+      themeId = 'swiss';
+      themeName = 'Swiss';
+    } else if (p.includes('rustic') || p.includes('river') || p.includes('woodland') || p.includes('timber') || p.includes('pine')) {
+      themeId = 'rustic';
+      themeName = 'Rustic';
+    } else if (p.includes('autumn') || p.includes('fall') || p.includes('maple') || p.includes('foliage')) {
+      themeId = 'autumn';
+      themeName = 'Autumn';
+    } else if (p.includes('parkland') || p.includes('country') || p.includes('estate') || p.includes('cottage') || p.includes('meadow')) {
+      themeId = 'countryside';
+      themeName = 'Countryside';
+    } else if (p.includes('prairie') || p.includes('sandhill') || p.includes('grain') || p.includes('harvest') || p.includes('wheat')) {
+      themeId = 'harvest';
+      themeName = 'Harvest';
+    }
+
+    const words = userPrompt.replace(/[^a-zA-Z0-9 ]/g, '').split(/\s+/).filter(w => w.length > 3);
+    const w1 = words[0] ? words[0].charAt(0).toUpperCase() + words[0].slice(1) : 'Crown';
+    const w2 = words[1] ? words[1].charAt(0).toUpperCase() + words[1].slice(1) : 'Ridge';
+
+    return [
+      {
+        id: `c_${Date.now()}_1`,
+        title: `${w1} ${w2} Golf Club (Concept A)`,
+        themeId,
+        themeName,
+        style: style || 'Championship Tournament',
+        par: 72,
+        lengthYards: 7290,
+        backdrop: `${themeName} Horizon with Atmospheric Cloud Formations`,
+        vegetationPreset: `Native ${themeName} framing trees, fescue borders, and natural rough transition`,
+        waterFeatureType: 'Reflective strategic water hazards and crossing creeks',
+        bunkerStyle: 'Deep sculpted tournament bunkers with sharp sod lips',
+        terrainSignature: 'Dynamic rolling contours and elevated tee boxes with sweeping fairway vistas',
+        summary: `Crafted directly from your brief: "${userPrompt.slice(0, 100)}${userPrompt.length > 100 ? '...' : ''}". Prioritizes championship playability with clear strategic routes for conservative vs. heroic lines.`,
+        recommendations: [
+          `Configure the 2K25 "${themeName}" theme with automatic vegetation density set to 70%.`,
+          'Zero-out automated surfaces in 2K25 before laying manual spline fairways.',
+          'Keep green cup slope under 2.2 degrees for tournament stimpmeter consistency.'
+        ]
+      },
+      {
+        id: `c_${Date.now()}_2`,
+        title: `${w1} Valley Links (Concept B)`,
+        themeId: themeId === 'links' ? 'boreal' : 'links',
+        themeName: themeId === 'links' ? 'Boreal' : 'Links',
+        style: 'Traditional Links',
+        par: 71,
+        lengthYards: 7110,
+        backdrop: 'Undulating Coastal Bluff & Windblown Sky',
+        vegetationPreset: 'Fescue wisps, low heather, and wild gorse clusters',
+        waterFeatureType: 'Natural meandering burns and collection swales',
+        bunkerStyle: 'Revetted pot bunkers guarding key landing speed slots',
+        terrainSignature: 'Firm, rumpled fairway hummocks and false fronts funneling into collection hollows',
+        summary: 'A traditional ground-game layout emphasizing ground contour navigation, running approach shots, and multi-tier greens that test short-game imagination.',
+        recommendations: [
+          'Set fairway firmness high in 2K25 to encourage bounding rollout on dogleg drives.',
+          'Carve subtle punchbowl bowls on blind green approaches to keep extreme elevation drops playable.',
+          'Position cross-bunkers at 280-295 yards to force decisions on tee club selection.'
+        ]
+      },
+      {
+        id: `c_${Date.now()}_3`,
+        title: `${w2} Sanctuary Reserve (Concept C)`,
+        themeId: themeId === 'swiss' ? 'rustic' : 'swiss',
+        themeName: themeId === 'swiss' ? 'Rustic' : 'Swiss',
+        style: 'Modern Dramatic Showcase',
+        par: 72,
+        lengthYards: 7420,
+        backdrop: 'Majestic Mountain Massifs & Deep Ravine Ridges',
+        vegetationPreset: 'Evergreen conifers, rock scree outcrops, and mountain wildflowers',
+        waterFeatureType: 'Cascading boulder-lined waterfalls and reflecting basins',
+        bunkerStyle: 'Expansive sandbelt-style waste areas cut directly into natural hill contours',
+        terrainSignature: 'Dramatic vertical drops, cliffside tee boxes, and natural spectator amphitheaters',
+        summary: 'A cinematic championship experience leveraging severe natural elevation changes and cliff edges for unforgettable signature hole visuals.',
+        recommendations: [
+          'Utilize 2K25 landscape sculpting brushes with 0.8 falloff to create sheer rock wall edges.',
+          'Design Hole 17 as a high-drama drivable risk-and-reward par 4 under 335 yards.',
+          'Place multi-tier grandstand spectator mounds around the 9th and 18th clubhouse greens.'
+        ]
+      }
+    ];
+  }
+
+  const currentConcept = concepts[activeConceptIndex] || concepts[0];
 
   return (
     <div className="flex-1 overflow-y-auto p-6 space-y-6 text-slate-100 bg-slate-950">
@@ -174,11 +343,11 @@ export const ConceptStudio: React.FC<ConceptStudioProps> = ({
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="absolute bottom-3 right-3 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-lg flex items-center gap-2 transition disabled:opacity-50 shadow-md"
+            className="absolute bottom-3 right-3 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-lg flex items-center gap-2 transition disabled:opacity-50 shadow-md cursor-pointer"
           >
             {isGenerating ? (
               <>
-                <RefreshCw className="w-3.5 h-3.5 animate-spin" /> Synthesizing...
+                <RefreshCw className="w-3.5 h-3.5 animate-spin" /> Synthesizing Concepts...
               </>
             ) : (
               <>
@@ -187,6 +356,24 @@ export const ConceptStudio: React.FC<ConceptStudioProps> = ({
             )}
           </button>
         </div>
+
+        {generationError && (
+          <div className="flex items-start gap-2 text-xs text-amber-300 bg-amber-950/60 border border-amber-800/80 px-3.5 py-2.5 rounded-xl leading-relaxed">
+            <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <strong>Notice:</strong> {generationError}
+            </div>
+          </div>
+        )}
+
+        {generationSource && (
+          <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-3 py-1.5 rounded-lg">
+            <Check className="w-4 h-4 shrink-0" />
+            <span>
+              Generated 3 customized course concepts ({generationSource === 'gemini' ? 'Gemini AI Powered' : 'Architecture Engine'}). Select Concept A, B, or C below to inspect.
+            </span>
+          </div>
+        )}
 
         {/* Quick Style Chips */}
         <div className="flex flex-wrap items-center gap-2 pt-2">

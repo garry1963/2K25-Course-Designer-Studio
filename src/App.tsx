@@ -16,6 +16,7 @@ import { ExportCentre } from './components/ExportCentre';
 import { AIAssistant } from './components/AIAssistant';
 import { Playtesting } from './components/Playtesting';
 import { HelpGuide } from './components/HelpGuide';
+import { ProjectManagerModal } from './components/ProjectManagerModal';
 
 // Icons
 import {
@@ -33,14 +34,52 @@ import {
   Save,
   CheckCircle2,
   FolderOpen,
+  FolderPlus,
   HelpCircle
 } from 'lucide-react';
 
 export default function App() {
-  const [project, setProject] = useState<CourseProject>(DEMO_PROJECT_WHISPERING_PINES);
+  const [projects, setProjects] = useState<CourseProject[]>([DEMO_PROJECT_WHISPERING_PINES]);
+  const [currentProjectId, setCurrentProjectId] = useState<string>(DEMO_PROJECT_WHISPERING_PINES.id);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const [selectedHoleNumber, setSelectedHoleNumber] = useState<number>(1);
   const [saveStatus, setSaveStatus] = useState<string>('Saved');
+
+  // Active project derived from currentProjectId
+  const project = projects.find((p) => p.id === currentProjectId) || projects[0] || DEMO_PROJECT_WHISPERING_PINES;
+
+  const setProject = (updater: CourseProject | ((prev: CourseProject) => CourseProject)) => {
+    setProjects((prevProjects) => {
+      return prevProjects.map((p) => {
+        if (p.id === currentProjectId) {
+          return typeof updater === 'function' ? updater(p) : updater;
+        }
+        return p;
+      });
+    });
+    triggerAutoSave();
+  };
+
+  const handleCreateProject = (newProj: CourseProject) => {
+    setProjects((prev) => [newProj, ...prev]);
+    setCurrentProjectId(newProj.id);
+    setSelectedHoleNumber(1);
+    setActiveTab('dashboard');
+    triggerAutoSave();
+  };
+
+  const handleDeleteProject = (projectIdToDelete: string) => {
+    setProjects((prev) => {
+      const remaining = prev.filter((p) => p.id !== projectIdToDelete);
+      if (currentProjectId === projectIdToDelete && remaining.length > 0) {
+        setCurrentProjectId(remaining[0].id);
+        setSelectedHoleNumber(1);
+      }
+      return remaining;
+    });
+    triggerAutoSave();
+  };
 
   // Master Heightmap state
   const [heightmap, setHeightmap] = useState<number[][]>(() =>
@@ -100,12 +139,28 @@ export default function App() {
             </div>
           </div>
 
-          <div className="mt-3 px-2.5 py-1.5 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-between text-[11px]">
-            <span className="text-slate-400 truncate max-w-[120px] font-medium">{project.name}</span>
-            <span className="text-emerald-400 font-mono font-bold flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3" /> {saveStatus}
+          <div
+            onClick={() => setIsProjectModalOpen(true)}
+            className="mt-3 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 cursor-pointer flex items-center justify-between text-xs transition group"
+            title="Click to switch projects or create a new course"
+          >
+            <div className="flex items-center gap-2 overflow-hidden">
+              <FolderOpen className="w-3.5 h-3.5 text-emerald-400 shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="text-slate-200 truncate font-bold text-[11px] group-hover:text-emerald-300">
+                {project.name}
+              </span>
+            </div>
+            <span className="text-[10px] text-slate-500 group-hover:text-emerald-400 font-mono font-medium shrink-0 ml-1">
+              Switch
             </span>
           </div>
+
+          <button
+            onClick={() => setIsProjectModalOpen(true)}
+            className="w-full mt-2 py-1.5 px-2.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 hover:border-emerald-500/40 text-[11px] font-bold flex items-center justify-center gap-1.5 transition"
+          >
+            <FolderPlus className="w-3.5 h-3.5" /> + New Course Project
+          </button>
         </div>
 
         {/* Navigation Sections */}
@@ -155,6 +210,7 @@ export default function App() {
             onNavigateTab={setActiveTab}
             onUpdateProject={setProject}
             onSelectHole={setSelectedHoleNumber}
+            onOpenProjectManager={() => setIsProjectModalOpen(true)}
           />
         )}
 
@@ -249,6 +305,17 @@ export default function App() {
           <HelpGuide onNavigateTab={setActiveTab} />
         )}
       </main>
+
+      {/* Project Manager Modal */}
+      <ProjectManagerModal
+        isOpen={isProjectModalOpen}
+        onClose={() => setIsProjectModalOpen(false)}
+        projects={projects}
+        currentProjectId={currentProjectId}
+        onSelectProject={(projId) => setCurrentProjectId(projId)}
+        onCreateProject={handleCreateProject}
+        onDeleteProject={handleDeleteProject}
+      />
     </div>
   );
 }

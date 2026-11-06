@@ -19,7 +19,8 @@ import {
   AlertTriangle,
   Lightbulb,
   Search,
-  FileText
+  FileText,
+  FolderOpen
 } from 'lucide-react';
 
 interface HelpGuideProps {
@@ -44,6 +45,47 @@ export const HelpGuide: React.FC<HelpGuideProps> = ({ onNavigateTab }) => {
   const [expandedSectionId, setExpandedSectionId] = useState<string>('project_dashboard');
 
   const helpSections: HelpSection[] = [
+    {
+      id: 'project_manager',
+      tabId: 'dashboard',
+      title: 'Project Manager & Course Creation',
+      category: 'Overview',
+      icon: FolderOpen,
+      summary:
+        'Allows creating brand new 9-hole or 18-hole course projects from scratch, switching between active projects, and deleting retired courses with confirmation protection.',
+      keyFeatures: [
+        'Create new courses with custom names, subtitles, hole counts (9 or 18), themes, and styles',
+        'Switch between multiple design projects at any time without losing edits',
+        'Safe deletion dialog protecting active course data from accidental deletion',
+        'Automatic coordinate grid and initial routing initialization for all new courses'
+      ],
+      optionsExplained: [
+        {
+          name: '+ New Course Project Button',
+          description: 'Opens the project creation form in the sidebar or dashboard banner.',
+          howToUse: 'Click "+ New Course Project" in the left sidebar or "Switch / New Project" on the dashboard.',
+          proTip: 'Choose between 9-hole or 18-hole routing right at creation to set up the appropriate plot scale.'
+        },
+        {
+          name: 'Open Project / Switch',
+          description: 'Activates a selected course project from your studio library.',
+          howToUse: 'Click "Open Project" on any course card in the Project Manager list.',
+          proTip: 'Switching courses preserves each project’s unique heightmap, bunker matrix, and 2K25 theme settings.'
+        },
+        {
+          name: 'Delete Project (Trash Icon)',
+          description: 'Permanently removes a course project with an explicit safety confirmation dialog.',
+          howToUse: 'Click the red trash icon next to a project, then confirm "Delete Project" in the modal.',
+          proTip: 'The studio guards your last remaining course project so you always have at least one active workspace.'
+        }
+      ],
+      stepByStepGuide: [
+        'Click "+ New Course Project" in the left sidebar or the Dashboard header.',
+        'Enter the Course Name, Subtitle, 9 or 18 Hole count, and 2K25 Environment Theme.',
+        'Click "Create & Open Project" to initialize the course routing matrix.',
+        'To remove an unwanted course, open the Project Manager list and click the trash can icon.'
+      ]
+    },
     {
       id: 'project_dashboard',
       tabId: 'dashboard',

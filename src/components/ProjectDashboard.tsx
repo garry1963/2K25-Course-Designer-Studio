@@ -23,13 +23,15 @@ interface ProjectDashboardProps {
   onNavigateTab: (tabId: string) => void;
   onUpdateProject: (updater: (prev: CourseProject) => CourseProject) => void;
   onSelectHole: (holeNumber: number) => void;
+  onOpenProjectManager?: () => void;
 }
 
 export const ProjectDashboard: React.FC<ProjectDashboardProps> = ({
   project,
   onNavigateTab,
   onUpdateProject,
-  onSelectHole
+  onSelectHole,
+  onOpenProjectManager
 }) => {
   // Compute course statistics
   const totalYardage = project.holes.reduce((sum, h) => sum + h.yardage, 0);
@@ -71,6 +73,14 @@ export const ProjectDashboard: React.FC<ProjectDashboardProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            {onOpenProjectManager && (
+              <button
+                onClick={onOpenProjectManager}
+                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-sm flex items-center gap-2 border border-slate-700 shadow-sm transition hover:border-emerald-500/50"
+              >
+                <FolderOpen className="w-4 h-4 text-emerald-400" /> Switch / New Project
+              </button>
+            )}
             <button
               onClick={() => onNavigateTab('masterplan')}
               className="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95"
