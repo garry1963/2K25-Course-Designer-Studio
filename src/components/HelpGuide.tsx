@@ -61,6 +61,18 @@ export const HelpGuide: React.FC<HelpGuideProps> = ({ onNavigateTab }) => {
       ],
       optionsExplained: [
         {
+          name: 'Save Project Button (Ctrl+S)',
+          description: 'Persists all course changes, hole routings, and settings directly to browser persistent storage.',
+          howToUse: 'Click "Save Project" in the sidebar, top header bar, or dashboard header, or press Ctrl+S (Cmd+S on Mac).',
+          proTip: 'The button glows amber with an "Unsaved" tag when you have unsaved edits, and switches to emerald "Project Saved" with a timestamp once saved.'
+        },
+        {
+          name: 'Exit Protection & Close App Prompt',
+          description: 'Prevents accidental data loss by prompting you to save your project before closing the browser tab or exiting.',
+          howToUse: 'Click "Close / Exit Studio" or close the tab/window. If you have unsaved changes, a dialog will ask you to save first.',
+          proTip: 'You can choose "Save & Close", "Close Without Saving", or "Keep Editing".'
+        },
+        {
           name: '+ New Course Project Button',
           description: 'Opens the project creation form in the sidebar or dashboard banner.',
           howToUse: 'Click "+ New Course Project" in the left sidebar or "Switch / New Project" on the dashboard.',
@@ -68,9 +80,9 @@ export const HelpGuide: React.FC<HelpGuideProps> = ({ onNavigateTab }) => {
         },
         {
           name: 'Open Project / Switch',
-          description: 'Activates a selected course project from your studio library.',
+          description: 'Activates a selected course project from your studio library with unsaved change protection.',
           howToUse: 'Click "Open Project" on any course card in the Project Manager list.',
-          proTip: 'Switching courses preserves each project’s unique heightmap, bunker matrix, and 2K25 theme settings.'
+          proTip: 'If you have unsaved edits when switching, the studio prompts you to "Save & Switch" so nothing is lost.'
         },
         {
           name: 'Delete Project (Trash Icon)',
@@ -82,8 +94,9 @@ export const HelpGuide: React.FC<HelpGuideProps> = ({ onNavigateTab }) => {
       stepByStepGuide: [
         'Click "+ New Course Project" in the left sidebar or the Dashboard header.',
         'Enter the Course Name, Subtitle, 9 or 18 Hole count, and 2K25 Environment Theme.',
-        'Click "Create & Open Project" to initialize the course routing matrix.',
-        'To remove an unwanted course, open the Project Manager list and click the trash can icon.'
+        'Click "Create & Open Project" to initialize the course routing matrix (saved automatically).',
+        'As you edit holes, click "Save Project" or press Ctrl+S / Cmd+S at any time to save progress.',
+        'When closing the app or browser tab, the studio will prompt you to save if there are unsaved edits.'
       ]
     },
     {

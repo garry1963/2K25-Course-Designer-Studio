@@ -15,7 +15,8 @@ import {
   Share2,
   TrendingUp,
   AlertCircle,
-  FileText
+  FileText,
+  Save
 } from 'lucide-react';
 
 interface ProjectDashboardProps {
@@ -24,6 +25,9 @@ interface ProjectDashboardProps {
   onUpdateProject: (updater: (prev: CourseProject) => CourseProject) => void;
   onSelectHole: (holeNumber: number) => void;
   onOpenProjectManager?: () => void;
+  onSaveProject?: () => void;
+  hasUnsavedChanges?: boolean;
+  lastSavedTime?: string | null;
 }
 
 export const ProjectDashboard: React.FC<ProjectDashboardProps> = ({
@@ -31,7 +35,10 @@ export const ProjectDashboard: React.FC<ProjectDashboardProps> = ({
   onNavigateTab,
   onUpdateProject,
   onSelectHole,
-  onOpenProjectManager
+  onOpenProjectManager,
+  onSaveProject,
+  hasUnsavedChanges,
+  lastSavedTime
 }) => {
   // Compute course statistics
   const totalYardage = project.holes.reduce((sum, h) => sum + h.yardage, 0);
@@ -73,6 +80,37 @@ export const ProjectDashboard: React.FC<ProjectDashboardProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            {onSaveProject && (
+              <button
+                onClick={onSaveProject}
+                title="Save course project to local storage (Ctrl+S)"
+                className={`px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all shadow-md ${
+                  hasUnsavedChanges
+                    ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-amber-500/20 ring-2 ring-amber-400/50 hover:scale-105 active:scale-95'
+                    : 'bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-700/50'
+                }`}
+              >
+                {hasUnsavedChanges ? (
+                  <>
+                    <Save className="w-4 h-4 text-slate-950" />
+                    <span>Save Project</span>
+                    <span className="text-[10px] uppercase tracking-wider bg-slate-950/20 text-slate-950 px-1.5 py-0.5 rounded font-black">
+                      Unsaved
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Saved</span>
+                    {lastSavedTime && (
+                      <span className="text-[11px] font-normal text-emerald-300/70">
+                        ({lastSavedTime})
+                      </span>
+                    )}
+                  </>
+                )}
+              </button>
+            )}
             {onOpenProjectManager && (
               <button
                 onClick={onOpenProjectManager}
